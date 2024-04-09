@@ -1,25 +1,25 @@
-# Título do Projeto
+# Foco Acadêmico
 
-`CURSO`
+`Análise e Desenvolvimento de Sistemas - PUC Minas`
 
-`DISCIPLINA`
+`Desenvolvimento de Aplicação Web Front-End`
 
-`SEMESTRE`
+`Primeiro Eixo`
 
-Descrever resumidamente, em um ou dois parágrafos, o projeto desenvolvido.
+Este projeto está sendo desenvolvido com o objetivo de fornecer aos estudantes ferramentas de estudo que possam melhorar o seu desempenho, independente do seu nível educacional.
 
 ## Integrantes
 
-* Nome completo do aluno 1
-* Nome completo do aluno 2
-* Nome completo do aluno 3
-* Nome completo do aluno 4
-* Nome completo do aluno 5
-* Nome completo do aluno 6
+* Beatrice Rachelle Luz Diegues de Arecippo
+* Guilherme Augusto Costa Barros
+* Maurício Mascarenhas Ferreira
+* Felipe Alves Rodrigues
+* Rodrigo de Moura Pova
+* Jair Damián Martínez Bautista
 
 ## Orientador
 
-* Nome completo do professor
+* Marco Rodrigo Costa
 
 # Documentação
 
