@@ -67,7 +67,7 @@
 </tr>
 <tr>
 <td width="150px"><b>Descrição</b></td>
-<td width="600px">Vestibulandos / Concurseiros</td>
+<td width="600px">Concurseiros</td>
 </tr>
 <tr>
 <td><b>Necessidades</b></td>
@@ -84,6 +84,47 @@
 </tbody>
 </table>
 
+<table>
+<tbody>
+<tr align=center>
+<th colspan="2">Perfil 5 - Pesquisadores</th>
+</tr>
+<tr>
+<td width="150px"><b>Descrição</b></td>
+<td width="600px">Pesquisadores experientes e em início de carreira em diversas áreas do conhecimento
+</td>
+</tr>
+<tr>
+<td><b>Necessidades</b></td>
+<td><ol><li>Gerenciar grandes volumes de dados de pesquisas de campo, entrevistas, questionários e experimentos de forma organizada e eficiente.</li>
+<li>Estabelecer conexões entre diferentes anotações, dados e resultados, identificando padrões e construindo conhecimento científico.</li>
+<li>Integrar dados de diversas fontes, incluindo notas de campo, transcrições de entrevistas, imagens e gráficos, em um único ambiente.</li>
+</ol></td>
+</tr>
+</tbody>
+</table>
+
+<table>
+<tbody>
+<tr align=center>
+<th colspan="2">Perfil 6 - Escritores</th>
+</tr>
+<tr>
+<td width="150px"><b>Descrição</b></td>
+<td width="600px">Escritores experientes e em início de carreira em diversos gêneros literários
+</td>
+</tr>
+<tr>
+<td><b>Necessidades</b></td>
+<td><ol><li>Fazer anotações detalhadas sobre ideias, personagens, cenários, tramas e subtramas de seus livros, roteiros ou outras obras literárias.</li>
+<li>Criar mapas mentais e diagramas para visualizar a estrutura da história, o desenvolvimento dos personagens e a cronologia dos eventos.</li>
+<li>Construir um banco de dados de pesquisas para enriquecer a ambientação e o desenvolvimento da história.</li>
+<li>Gerenciar diferentes versões do manuscrito e controlar o histórico de alterações de forma organizada.</li>
+</ol></td>
+</tr>
+</tbody>
+</table>
+
 
 ## Histórias de Usuários
 
@@ -91,35 +132,43 @@ Baseados nos perfis analisados anteriormente obtivemos as seguintes histórias d
 
 |EU COMO... `QUEM`   | QUERO/PRECISO ... `O QUE` |PARA ... `PORQUE`                 |
 |--------------------|---------------------------|----------------------------------|
-| Estudante universitário,| desejo ter um espaço para registrar minhas dúvidas sobre os conteúdos das aulas e poder revisitá-las posteriormente, | para não perder nenhuma informação importante.|
-| Estudante do ensino médio, | desejo ter acesso a ferramentas que me ajudem a manter o foco durante os estudos, | para melhorar meu desempenho acadêmico.|
-| Profissional em busca de aprimoramento, | desejo encontrar recursos que me ajudem a desenvolver novas habilidades, | para me qualificar para uma nova área de atuação.|
-| Vestibulando,| quero organizar minhas anotações de aula de biologia, química e física, de forma eficiente, | para poder revisá-las facilmente e me preparar para as provas.|
-| Concurseiro | quero organizar meus materiais de estudo de forma eficiente, | para otimizar meu tempo e aumentar minhas chances de aprovação.|
+| Estudante universitário,| quero ter um espaço para registrar as principais ideias e conceitos abordados em aula,  | para poder revisá-las facilmente antes das provas e trabalhos.|
+| Estudante do ensino médio, | quero utilizar ferramentas que me ajudem a manter o foco durante os estudos, | para otimizar o meu tempo e assimilar melhor o conteúdo das disciplinas.|
+| Profissional em busca de aprimoramento, | desejo organizar minhas anotações por tema, como análise de palavras-chave, otimização de conteúdo e construção de links | para me tornar mais competitiva no mercado de trabalho e pleitear melhores oportunidades.|
+| Vestibulando,| quero organizar minhas anotações de aula de biologia, química e física, de forma eficiente, | para poder revisá-las com facilidade e me preparar melhor para as provas.|
+| Concurseiro, | quero organizar meus materiais de estudo de forma eficiente, | para otimizar meu tempo e aumentar minhas chances de aprovação.|
+| Pesquisadora, | desejo organizar e analisar meus dados de forma eficiente, estabelecendo conexões entre diferentes anotações, resultados e imagens, | para identificar padrões, construir conhecimento científico.|
+| Escritora, | desejo criar anotações detalhadas sobre a história, incluindo perfis dos personagens, cenários e subtramas, | para construir uma narrativa coesa, envolvente e surpreendente para o leitor.|
 
 ## Requisitos do Projeto
 
-[Com base nas Histórias de Usuários, enumere os requisitos da solução. Lembre-se que cada requisito deve corresponder a uma, e somente uma, característica alvo da solução. Além disso, certifique-se de que todos os aspectos capturados nas Histórias de Usuário foram cobertos.]
+Baseados nas histórias de usuários anteriores temos os seguintes requisitos para o projeto:
 
 ### Requisitos Funcionais
 
-[Utilize o modelo de tabela abaixo para apresentar os requisitos funcionais]
-
 |ID    | Descrição                | Prioridade |
 |-------|---------------------------------|----|
-| RF-01 |  ...                    | ...   | 
-|  ...  |  ...                    | ...   |
+| RF-01 |  O sistema deve permitir ao usuário cadastro e login na plataforma. | ALTA | 
+| RF-02 |  O sistema deve fornecer um espaço que permita o usuário adicionar, editar, excluir e visualizar suas dúvidas já registradas. | ALTA | 
+| RF-03 |  O sistema deve oferecer acesso a ferramentas que auxiliem o usuário a manter o foco durante determinada atividade (relógio pomodoro). | ALTA | 
+| RF-04 |  O sistema deve oferecer recursos que permitam criar anotações de diversos temas, para desenvolver novas habilidades. | MÉDIA | 
+| RF-05 |  O sistema deve permitir categorizar as anotações por áreas do conhecimento além de permitir uma busca rápida e fácil de anotações específicas. | MÉDIA | 
+| RF-06 |  O sistema deve organizar o material de estudo do usuário candidato a concurso público de forma clara e eficiente. | BAIXA | 
+| RF-07 |  O sistema deve permitir ao usuário um controle de agenda com notificação para organização de provas e trabalhos a entregar. | BAIXA | 
+| RF-08 |  O sistema deve permitir ao usuário vincular anotações, dados e resultados de diferentes fontes, facilitando a construção de conhecimento científico. | MÉDIA | 
+| RF-09 |  O sistema deve oferecer ferramentas de formatação avançada, permitindo ao usuário definir estilos de parágrafo, fontes, espaçamento entre linhas e outras configurações de layout. | MÉDIA | 
 
 **Prioridade: Alta / Média / Baixa. 
 
 ### Requisitos não Funcionais
 
-[Utilize o modelo de tabela abaixo para apresentar os requisitos não-funcionais]
-
 |ID      | Descrição               |Prioridade |
 |--------|-------------------------|----|
-| RNF-01 |  ...                    | ...   | 
-| ...    |  ...                    | ...   | 
+| RNF-01 |  O sistema deve oferecer uma interface intuitiva. | ALTA | 
+| RNF-02 |  O sistema deve ser confiável para não perder informações. | ALTA | 
+| RNF-03 |  O sistema deve garantir segurança contra acesso não autorizado à conta. | MÉDIA | 
+| RNF-04 |  O sistema deve ser de baixo consumo de recursos computacionais. | BAIXA | 
+| RNF-05 |  O sistema deve garantir segurança contra acesso não autorizado à conta. | BAIXA | 
 
 **Prioridade: Alta / Média / Baixa. 
 
