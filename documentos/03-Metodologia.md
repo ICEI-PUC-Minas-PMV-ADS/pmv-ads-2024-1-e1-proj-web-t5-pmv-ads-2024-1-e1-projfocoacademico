@@ -42,6 +42,7 @@ A equipe utiliza o Scrum como base para definição do processo de desenvolvimen
 
   
   ![Captura de tela 2024-04-13 185606](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e1-proj-web-t5-pmv-ads-2024-1-e1-projfocoacademico/assets/165849851/4eeccfad-f84c-469c-b816-10f3e2147f4f)
+ Figura 2 - Tela do kanban no GitHub utilizada pelo grupo
 
 
 ### Etiquetas
