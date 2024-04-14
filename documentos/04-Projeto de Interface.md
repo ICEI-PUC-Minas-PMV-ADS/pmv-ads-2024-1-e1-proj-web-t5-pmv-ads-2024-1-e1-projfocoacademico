@@ -3,35 +3,46 @@
 
 ## User Flow
 
-Fluxo de usuário (User Flow) é uma técnica que permite ao desenvolvedor mapear todo fluxo de navegação do usuário na aplicação. Essa técnica funciona para alinhar os caminhos e as possíveis ações que o usuário pode fazer junto com os membros de sua equipe.
-![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e1-proj-web-t5-pmv-ads-2024-1-e1-projfocoacademico/assets/103201399/5ecdcdd9-c167-4b4e-a7ca-ec8486407ec8)
-
-
-[Adicione aqui o diagrama de fluxo de usuário da sua aplicação.] 
-
-> **Links Úteis**:
-> - [User Flow: O Quê É e Como Fazer?](https://medium.com/7bits/fluxo-de-usu%C3%A1rio-user-flow-o-que-%C3%A9-como-fazer-79d965872534)
-> - [User Flow vs Site Maps](http://designr.com.br/sitemap-e-user-flow-quais-as-diferencas-e-quando-usar-cada-um/)
-> - [Top 25 User Flow Tools & Templates for Smooth](https://www.mockplus.com/blog/post/user-flow-tools)
-
-## Protótipo
-
-Desenvolver um protótipo emerge como uma das maneiras mais ágeis e econômicas de validar uma ideia, conceito ou funcionalidade. Isso permite a interação, avaliação, modificação e aprovação das principais características de uma interface antes de entrar na fase de desenvolvimento. Leia o artigo [Protótipos: baixa, média ou alta fidelidade?](https://medium.com/ladies-that-ux-br/prot%C3%B3tipos-baixa-m%C3%A9dia-ou-alta-fidelidade-71d897559135).
+O fluxograma apresentado na figura 1 mostra o fluxo de interação do usuário pelas telas do sistema. Cada uma das telas deste fluxo é detalhada na seção de Protótipo de baixa fidelidade que se segue.
+![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e1-proj-web-t5-pmv-ads-2024-1-e1-projfocoacademico/assets/103201399/1de5e3f6-7aab-454f-bcfd-a2ec229f367d)
 
 ### Protótipo de baixa fidelidade
 
 Protótipos de baixa fidelidade apresentam de forma simplificada o design da interface e o relacionamento entre suas páginas, permitindo evolução da proposta da solução. Neste projeto, os utilizaremos para apoiar a validação dos requisitos e efetuar mudanças dos mesmos, caso seja necessário, para menor impacto na codificação da aplicação.
 
-[Elabore as principais interfaces gráficas da aplicação de modo que os requisitos funcionais sejam contemplados nas telas propostas.]
+<h3><b>Tela - Home page</b></h3>
+<p>A tela de home page apresenta um navbar com as opções de navegação do site. A partir dela é possível acessar o Cadastro de usuário, o Login e o menu de ferramentas</p>
+![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e1-proj-web-t5-pmv-ads-2024-1-e1-projfocoacademico/assets/103201399/2270292f-e51e-4f51-8b69-62050532d180)
 
-[Adicione aqui as telas da sua aplicação com seus devidos títulos.] 
- 
-> **Links Úteis**:
-> - [Protótipos vs Wireframes](https://www.nngroup.com/videos/prototypes-vs-wireframes-ux-projects/)
->- Ferramentas:
->> - [Pencil](https://pencil.evolus.vn/)
->> - [MarvelApp](https://marvelapp.com/)
->> - [Figma](https://www.figma.com/)
+<h3><b>Modal - Cadastro de usuário</b></h3>
+<p>O Modal de Cadastro de usuário permite o usuário cadastrar uma nova conta</p>
+![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e1-proj-web-t5-pmv-ads-2024-1-e1-projfocoacademico/assets/103201399/084ac72d-e46e-4704-90c7-1fa2865451ac)
 
+<h3><b>Modal - Login</b></h3>
+<p>O Modal de Login permite o usuário acessar sua conta</p>
+![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e1-proj-web-t5-pmv-ads-2024-1-e1-projfocoacademico/assets/103201399/88cec0d9-81f3-414f-b1f6-6d96b94b7f44)
+
+<h3><b>Navbar - Menu Ferramentas</b></h3>
+<p>O menu de ferramentas encontrado dentro da tela home possibilita a navegação para as demais ferramentas do site.</p>
+![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e1-proj-web-t5-pmv-ads-2024-1-e1-projfocoacademico/assets/103201399/90b4d585-e383-46ae-b24d-7906dcea9782)
+
+<h3><b>Tela - Anotações </b></h3>
+<p>A tela de anotações permite ao usuário as opções de criar, editar e deletar notas.</p>
+![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e1-proj-web-t5-pmv-ads-2024-1-e1-projfocoacademico/assets/103201399/2d81c8a2-7b1e-412a-9cd8-9bf0fe0bdde3)
+
+<h3><b>Modal - Criar notas </b></h3>
+<p>A tela de criar notas permite ao usuário criar uma nova nota.</p>
+![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e1-proj-web-t5-pmv-ads-2024-1-e1-projfocoacademico/assets/103201399/6f3a9ec9-14a2-4ff8-9564-a5138190fab9)
+
+<h3><b>Modal - Editar notas </b></h3>
+<p>A tela de editar notas permite ao usuário editar uma nota existente.</p>
+![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e1-proj-web-t5-pmv-ads-2024-1-e1-projfocoacademico/assets/103201399/33e043f7-cadc-42a3-bcad-6903f09fff41)
+
+<h3><b>Tela - Polmodoro </b></h3>
+<p>A tela de polmodoro permite ao usuário definir o tempo de estudo e descanso e iniciar o relógio.</p>
+![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e1-proj-web-t5-pmv-ads-2024-1-e1-projfocoacademico/assets/103201399/0ae0e0e0-be4c-4a51-abf9-cfcfde6d8a77)
+
+Segue link do projeto do figma completo e com algumas telas para futura implementação em caso de sobra de capacity do time.
+https://www.figma.com/file/24vijBobl0zviNpUI9aUBV/Foco-Acadêmico?type=design&node-id=30-4&mode=design&t=zFaa7iJiFqQ2Af2j-0
 
 
