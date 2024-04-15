@@ -12,7 +12,7 @@ Protótipos de baixa fidelidade apresentam de forma simplificada o design da int
 
 <h3><b>Tela - Home page</b></h3>
 <p>A tela de home page apresenta um navbar com as opções de navegação do site. A partir dela é possível acessar o Cadastro de usuário, o Login e o menu de ferramentas</p>
-![image](pmv-ads-2024-1-e1-proj-web-t5-pmv-ads-2024-1-e1-projfocoacademico/ documentos/ img/ Projeto de interface)
+![image](pmv-ads-2024-1-e1-proj-web-t5-pmv-ads-2024-1-e1-projfocoacademico/documentos/img/Projetodeinterface)
 
 <h3><b>Modal - Cadastro de usuário</b></h3>
 <p>O Modal de Cadastro de usuário permite o usuário cadastrar uma nova conta</p>
