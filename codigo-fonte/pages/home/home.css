@@ -24,9 +24,9 @@
     margin-top: 2rem;
  }
 
- .btn-home {
-    height: 4rem;
-    width: 18rem;
-    font-size: 1.2rem;
-    margin-top: 4rem;
- }
+ .home-btn {
+    height: 4rem !important;
+    width: 18rem !important;
+    font-size: 1.2rem !important;
+    margin-top: 4rem !important;
+}
