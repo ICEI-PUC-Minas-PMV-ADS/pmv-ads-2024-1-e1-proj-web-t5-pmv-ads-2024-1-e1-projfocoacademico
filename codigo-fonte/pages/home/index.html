@@ -20,8 +20,8 @@
     <nav class="navbar navbar-expand-lg">
         <a class="navbar-brand" href=""><img class="logo" src="../../assets/img/focoAcademicoIcon.png" /></a>
         <ul class="nav-options">
-            <li class="option">Home</li>
-            <li class="option">Login</li>
+            <li class="option btn-home">Home</li>
+            <li class="option btn-login">Login</li>
             <li class="option">Ferramentas <i class="bx bx-chevron-down"></i></li>
         </ul>
         <button class="default-btn"><i class="fas fa-user" style="margin-right: 0.5rem;"></i> Cadastre-se</button>
@@ -39,15 +39,15 @@
             <legend>Cadastre-se agora</legend>
 
             <div class="input-wrapper">
-                <label for="nome">Nome</label>
+                <label for="nome"><i class='bx bxs-user' style='color:#f2f2f2' ></i> Nome</label>
                 <input type="text" id="nome" name="nome">
             </div>
             <div class="input-wrapper">
-                <label for="email">Email</label>
+                <label for="email"><i class='bx bxs-envelope' style='color:#f2f2f2' ></i> Email</label>
                 <input type="email" id="email" name="email">
             </div>
             <div class="input-wrapper">
-                <label for="senha">Senha</label>
+                <label for="senha"><i class='bx bxs-lock-alt' style='color:#f2f2f2' ></i> Senha</label>
                 <input type="password" id="senha" name="senha">
             </div>
 
@@ -55,6 +55,23 @@
         </form>
     </div>
 
+    <div class="modal-container2">
+        <form id="modal-login">
+            <span class="btn-close-login">x</span>
+            <legend>Entrar agora</legend>
+
+            <div class="input-wrapper">
+                <label for="email"><i class='bx bxs-envelope' style='color:#f2f2f2' ></i> Email</label>
+                <input type="email" id="email" name="email">
+            </div>
+            <div class="input-wrapper">
+                <label for="senha"><i class='bx bxs-lock-alt' style='color:#f2f2f2' ></i> Senha</label>
+                <input type="password" id="senha" name="senha">
+            </div>
+
+            <button id="btn-entrar"> Entrar </button>
+        </form>
+    </div>
     <script src="../../js/script.js" defer></script>
 </body>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

@@ -53,7 +53,7 @@
   margin: 10% auto;
   padding: 2rem 4rem;
   border: 1px solid #888;
-  border-radius: 10px;
+  border-radius: 40px;
 
   display: flex;
   flex-direction: column;
@@ -72,12 +72,16 @@
   display: flex;
   flex-direction: column;
   gap: 0px;
+ 
 }
 
 .input-wrapper label {
   font-size: 14px;
   font-weight: bold;
   line-height: 10px;
+  margin-left: 5px;
+ 
+  
 }
 
 .input-wrapper input {
@@ -85,9 +89,9 @@
   font-weight: var(--font-weight-thin);
   font-size: 1rem;
 
-  padding: 4px;
+  padding: 4px 10px;
   border: none;
-  border-radius: 4px;
+  border-radius: 40px;
 
   outline: none;
 }
@@ -105,7 +109,7 @@
   margin-top: 16px;
   padding: 6px;
   border: none;
-  border-radius: 4px;
+  border-radius: 40px;
 
   transition: 0.4s;
   cursor: pointer;
@@ -120,8 +124,8 @@
   color: white;
 
   position: absolute;
-  top: -0.8rem;
-  right: -0.8rem;
+  top: -0.5rem;
+  right: -0.5rem;
   width: 2rem;
   height: 2rem;
 
@@ -133,6 +137,82 @@
   font-weight: bold;
 
   padding-bottom: 5px;
+  border-radius: 100%;
+
+  transition: 0.4s;
+  cursor: pointer;
+}
+
+/*Modal login*/
+.modal-container2{
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+}
+#modal-login{
+  background-color: var(--secondary-bg-color);
+  width: 500px;
+  color: var(--white-font-color);
+  position: relative;
+
+  margin: 10% auto;
+  padding: 2rem 4rem;
+  border: 1px solid #888;
+  border-radius: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+#modal-login legend {
+  text-align: center;
+  font-weight: bold;
+  font-size: 28px;
+
+  margin-bottom: 16px;
+}
+#btn-entrar {
+  background-color: var(--primary-color);
+  color: var(--white-font-color);
+  font-weight: bold;
+  font-size: 22px;
+
+  margin-top: 16px;
+  padding: 6px;
+  border: none;
+  border-radius: 40px;
+
+  transition: 0.4s;
+  cursor: pointer;
+}
+#btn-entrar:hover,
+.btn-close-login:hover {
+  opacity: 0.6;
+}
+.btn-close-login {
+  background-color: red;
+  color: white;
+
+  position: absolute;
+  top: -0.5rem;
+  right: -0.5rem;
+  width: 2rem;
+  height: 2rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 30px;
+  font-weight: bold;
+
+  padding-bottom: 8px;
   border-radius: 100%;
 
   transition: 0.4s;
