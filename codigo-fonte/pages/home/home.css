@@ -218,3 +218,15 @@
   transition: 0.4s;
   cursor: pointer;
 }
+
+.rodape {
+  width: 100%;
+  padding: 1rem;
+  background: var(--secondary-bg-color);
+  color: #fff;
+  text-align: center;
+
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
