@@ -1,5 +1,3 @@
-
-
 /* Elements */
 const cadastroModal = document.querySelector(".modal-container");
 const cadastroBtn = document.querySelector(".default-btn");
@@ -20,7 +18,7 @@ window.addEventListener("click", function (event) {
   }
 });
 
-/*Elements-Modal-Login*/ 
+/*Elements-Modal-Login*/
 const loginModal = document.querySelector(".modal-container2");
 const loginBtn = document.querySelector(".btn-login");
 const loginClose = document.querySelector(".btn-close-login");
@@ -38,5 +36,3 @@ window.addEventListener("click", function (event) {
     loginModal.style.display = "none";
   }
 });
-
-
