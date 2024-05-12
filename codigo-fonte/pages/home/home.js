@@ -79,7 +79,6 @@ cadSenha.addEventListener("keyup", () => {
 cadastrarBtn.addEventListener("click", function (e) {
   e.preventDefault();
   cadastrarUsuario();
-  cadastroModal.style.display = "none";
 });
 
 /* Events-Modal-Login */
@@ -99,16 +98,23 @@ window.addEventListener("click", function (event) {
 
 /* Funções de Cadastro */
 function cadastrarUsuario() {
-  let listaUsuarios = JSON.parse(localStorage.getItem("listaUsuarios") || "[]");
-  listaUsuarios.push({
-    nome: cadNome.value,
-    email: cadEmail.value,
-    senha: cadSenha.value,
-  });
+  if (cadastroValido()) {
+    let listaUsuarios = JSON.parse(
+      localStorage.getItem("listaUsuarios") || "[]",
+    );
+    listaUsuarios.push({
+      nome: cadNome.value,
+      email: cadEmail.value,
+      senha: cadSenha.value,
+    });
 
-  localStorage.setItem("listaUsuarios", JSON.stringify(listaUsuarios));
+    localStorage.setItem("listaUsuarios", JSON.stringify(listaUsuarios));
 
-  alert("Cadastrado com sucesso!");
+    alert("Cadastrado com sucesso!");
+    cadastroModal.style.display = "none";
+  } else {
+    alert("Verifique os campos...");
+  }
 }
 
 function limparFormularioCadastro() {
@@ -123,4 +129,12 @@ function limparFormularioCadastro() {
 function emailValido(email) {
   let emailPadrao = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
   return emailPadrao.test(email);
+}
+
+function cadastroValido() {
+  return (
+    cadNome.value.length >= 3 &&
+    cadSenha.value.length >= 6 &&
+    emailValido(cadEmail.value)
+  );
 }
