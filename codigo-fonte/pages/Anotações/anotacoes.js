@@ -55,14 +55,6 @@ function recuperarAnotacoes() {
   }
 }
 
-function mostrarMensagemSucesso(mensagem) {
-  alert(mensagem); 
-}
-
-function mostrarMensagemErro(mensagem) {
-  alert(`Erro: ${mensagem}`);
-}
-
 function criarElementoAnotacao(anotacao) {
   const li = document.createElement('li');
   li.classList.add('anotacao');

@@ -3,30 +3,34 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" href="assets/image.png" /> <link rel="stylesheet" href="styles\anotacoes.css">
+  <link rel="icon" href="assets/image.png" /> <link rel="stylesheet" href="./anotacoes.css">
   <link rel="stylesheet" href="styles\global-style.css"> <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../common/styles/global-styles.css" />
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"> 
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
   <title>Anotações / Foco Acadêmico</title>
 </head>
 <body class="home-body">
   <nav class="navbar navbar-expand-lg">
-    <a class="navbar-brand" href=""><img alt="Logo Foco Acadêmico" class="logo" src="assets\focoAcademicoIcon.png" /></a>
+    <a class="navbar-brand" href="../home/index.html"><img class="logo" src="../../assets/img/focoAcademicoIcon.png" /></a>
     <ul class="nav-options">
-      <li class="option" href="index.html">Home</li>
-      <li class="option" href="login.html">Login</li>
-      <li class="option" onclick="abrirMenuDropdown()">
-        Ferramentas
-        <i class="bx bx-chevron-down"></i>
-        <ul class="dropdown-menu" aria-labelledby="ferramentasDropdown">
-          <li><a class="dropdown-item" href="anotacoes.html">Anotações</a></li>
-          <li><a class="dropdown-item" href="pomodoro.html">Pomodoro</a></li>
-        </ul>
-      </li>
+        <a href="../home/index.html" class="option btn-home">Home</a>
+        <li class="option btn-login">Login</li>
+        <div class="dropdown">
+            <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Ferramentas
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" href="../Anotações/anotacoes.html">Anotações</a>
+                <a class="dropdown-item" href="">Relógio Polmodoro</a>  
+            </div>
+          </div>
     </ul>
-    <button class="btn-cadastre-se" onclick="abrirModalCadastro()">Cadastre-se</button>
+    <button class="default-btn"><i class="fas fa-user" style="margin-right: 0.5rem;"></i> Cadastre-se</button>
   </nav>
   <header>
     <h1>Anotações</h1>
@@ -38,29 +42,34 @@
       <section class="criar-nova-anotacao">
         <button class="btn-nova-anotacao" onclick="abrirModalNovaAnotacao()">Nova anotação</button>
       </section>
-      <div class="modal-container">
-        <div class="modal" id="modalCriarEditar">
-          <div class="modal-header">
-            <h3>Criar Anotação</h3>
-            <button class="btn-fechar" onclick="fecharModal()">X</button>
-          </div>
-          <div class="modal-body">
-            <form id="formAnotacao"> <div class="input-wrapper">
-                <label for="titulo">Título:</label>
-                <input type="text" id="titulo" name="titulo" required>
-              </div>
-              <div class="input-wrapper">
-                <label for="conteudo">Conteúdo:</label>
-                <textarea id="conteudo" name="conteudo" rows="5" required></textarea>
-              </div>
-            </form>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-primary" onclick="salvarAnotacao()">Salvar</button>
-            <button type="button" class="btn btn-secondary" onclick="fecharModal()">Cancelar</button>
-          </div>
+
+      <div class="modal" id="modalCriarEditar">
+        <div class="modal-header">
+          <h3>Criar Anotação</h3>
+          <button class="btn-fechar" onclick="fecharModal()">X</button>
         </div>
+        <div class="modal-body">
+          <form id="formAnotacao"> 
+            <div class="input-wrapper">
+              <label for="titulo">Título:</label>
+              <input type="text" id="titulo" name="titulo" required>
+            </div>
+            <div class="input-wrapper">
+              <label for="conteudo">Conteúdo:</label>
+              <textarea id="conteudo" name="conteudo" rows="5" required></textarea>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" onclick="salvarAnotacao()">Salvar</button>
+          <button type="button" class="btn btn-secondary" onclick="fecharModal()">Cancelar</button>
+        </div>
+      </div>
     </main>
-      <script src="scripts\anotacoes.js"></script>
+      <script src="./anotacoes.js"></script>
 </body>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
 </html>
