@@ -23,14 +23,17 @@ const labelSenhaOriginalHTML =
 const loginModal = document.querySelector(".modal-container2");
 const loginBtn = document.querySelector(".btn-login");
 const loginClose = document.querySelector(".btn-close-login");
+const loginEmail = document.querySelector("#loginEmail");
+const loginSenha = document.querySelector("#loginSenha");
+const submitLoginBtn = document.querySelector("#btn-submit-login");
 
 /* Events Cadastro */
-cadastroBtn.addEventListener("click", function () {
+cadastroBtn.addEventListener("click", function abrirModalCadastro() {
   cadastroModal.style.display = "block";
   limparFormularioCadastro();
 });
 
-cadastroClose.addEventListener("click", function () {
+cadastroClose.addEventListener("click", function fecharModalCadastro() {
   cadastroModal.style.display = "none";
 });
 
@@ -81,21 +84,6 @@ cadastrarBtn.addEventListener("click", function (e) {
   cadastrarUsuario();
 });
 
-/* Events-Modal-Login */
-loginBtn.addEventListener("click", function () {
-  loginModal.style.display = "block";
-});
-
-loginClose.addEventListener("click", function () {
-  loginModal.style.display = "none";
-});
-
-window.addEventListener("click", function (event) {
-  if (event.target == loginModal) {
-    loginModal.style.display = "none";
-  }
-});
-
 /* Funções de Cadastro */
 function cadastrarUsuario() {
   if (cadastroValido()) {
@@ -138,3 +126,42 @@ function cadastroValido() {
     emailValido(cadEmail.value)
   );
 }
+
+/* Events-Modal-Login */
+loginBtn.addEventListener("click", function abrirModalLogin() {
+  loginModal.style.display = "block";
+});
+
+loginClose.addEventListener("click", function fecharModalClickBtn() {
+  fecharModalLogin();
+});
+
+window.addEventListener("click", function (event) {
+  if (event.target == loginModal) { fecharModalLogin(); }
+});
+
+function fecharModalLogin() {
+  loginModal.style.display = "none";
+}
+
+function getListaUsuarios() {
+  const usuariosJSON = localStorage.getItem("listaUsuarios") || "[]";
+  return JSON.parse(usuariosJSON);
+}
+
+function isLoginValido(userEmail, userPassword) {
+  return getListaUsuarios().some(usuario => 
+    usuario.email === userEmail && usuario.senha === userPassword
+  );
+}
+
+submitLoginBtn.addEventListener("click", function submitLoginUsuario(e) {
+  if (isLoginValido(loginEmail.value, loginSenha.value)) {
+    localStorage.setItem("isLogado", true);
+    alert("Logado com sucesso!");
+    fecharModalLogin();
+  } else {
+    e.preventDefault()
+    alert("Email ou senha inválidos...");
+  }
+});

@@ -180,7 +180,7 @@
 
   margin-bottom: 16px;
 }
-#btn-entrar {
+#btn-submit-login {
   background-color: var(--primary-color);
   color: var(--white-font-color);
   font-weight: bold;
