@@ -5,46 +5,54 @@ function salvarAnotacoes(anotacoes) {
 
 // gerenciar o modal
 function abrirModalNovaAnotacao() {
-  document.getElementById("modalCriarEditar").style.display = "block";
-  document.querySelector('.modal-container').classList.add('active');
+  document.getElementById('modalCriarEditar').style.display = 'block';
   limparFormularioModal();
+}
+
+function abrirModalEditarAnotacao(indiceAnotacao) {
+  document.getElementById('modalCriarEditar').style.display = 'block';
+  preencherModal(indiceAnotacao);
 }
 
 function limparFormularioModal() {
   const tituloInput = document.getElementById('titulo');
   const conteudoTextarea = document.getElementById('conteudo');
+  document.getElementById('modalCriarEditar').dataset.indiceAnotacao = '';
   tituloInput.value = '';
   conteudoTextarea.value = '';
 }
 
 function fecharModal() {
-  document.getElementById("modalCriarEditar").style.display = 'none';
+  document.getElementById('modalCriarEditar').style.display = 'none';
   document.querySelector('.modal-container').classList.remove('active');
 }
 
-function preencherModal(anotacao, indiceAnotacao) {
+function preencherModal(indiceAnotacao) {
   const tituloInput = document.getElementById('titulo');
   const conteudoTextarea = document.getElementById('conteudo');
 
-  tituloInput.value = anotacao.titulo || ''; 
-  conteudoTextarea.value = anotacao.conteudo || ''; 
+  const anotacao = recuperarAnotacoes()[indiceAnotacao];
 
-  document.getElementById("modalCriarEditar").dataset.indiceAnotacao = indiceAnotacao;
+  tituloInput.value = anotacao.titulo || '';
+  conteudoTextarea.value = anotacao.conteudo || '';
+
+  document.getElementById('modalCriarEditar').dataset.indiceAnotacao = indiceAnotacao;
 }
 
 // gerenciar anotações
 function gerarID() {
-  return Math.floor(Math.random() * 1000000); 
+  return Math.floor(Math.random() * 1000000);
 }
 
 function carregarAnotacoes() {
   const anotacoes = recuperarAnotacoes();
   if (anotacoes.length > 0) {
-  preencherListaAnotacoes(anotacoes);
-  mostrarMensagemSucesso('Anotações carregadas com sucesso!');
-} else {
-  preencherListaAnotacoes(anotacoes);
-}}
+    preencherListaAnotacoes(anotacoes);
+    console.log('Anotações carregadas com sucesso!');
+  } else {
+    preencherListaAnotacoes(anotacoes);
+  }
+}
 
 function recuperarAnotacoes() {
   const anotacoesSalvas = localStorage.getItem('anotacoes');
@@ -72,13 +80,13 @@ function criarElementoAnotacao(anotacao, index) {
   const btnExcluir = document.createElement('button');
   btnExcluir.classList.add('btn-excluir');
   btnExcluir.textContent = 'Excluir';
-  btnExcluir.onclick = () => excluirAnotacao(anotacao);
+  btnExcluir.onclick = (e) => excluirAnotacao(e.target.closest('.anotacao').dataset.index);
   li.appendChild(btnExcluir);
 
   const btnEditar = document.createElement('button');
   btnEditar.classList.add('btn-editar');
   btnEditar.textContent = 'Editar';
-  btnEditar.onclick = () => editarAnotacao(anotacao);
+  btnEditar.onclick = (e) => abrirModalEditarAnotacao(e.target.closest('.anotacao').dataset.index);
   li.appendChild(btnEditar);
 
   return li;
@@ -91,7 +99,7 @@ function excluirAnotacao(indice) {
     anotacoes.splice(indice, 1);
     salvarAnotacoes(anotacoes);
     carregarAnotacoes();
-    mostrarMensagemSucesso('Anotação excluída com sucesso!');
+    console.log('Anotação excluída com sucesso!');
   }
 }
 
@@ -101,9 +109,9 @@ function mostrarMensagemErro(mensagem) {
 
 function preencherListaAnotacoes(anotacoes) {
   const listaAnotacoes = document.querySelector('.lista-anotacoes');
-  listaAnotacoes.innerHTML = ''; 
+  listaAnotacoes.innerHTML = '';
 
-  anotacoes.forEach(anotacao, index => {
+  anotacoes.forEach((anotacao, index) => {
     const anotacaoHTML = criarElementoAnotacao(anotacao, index);
     listaAnotacoes.appendChild(anotacaoHTML);
   });
@@ -112,46 +120,49 @@ function preencherListaAnotacoes(anotacoes) {
 // atualizar a anotação na lista após salvar ou excluir
 function atualizarAnotacaoNaLista(indice, novaAnotacao) {
   const listaAnotacoes = document.querySelector('.lista-anotacoes');
-  const anotacaoHTML = criarElementoAnotacao(novaAnotacao); 
+  const anotacaoHTML = criarElementoAnotacao(novaAnotacao);
 
   if (indice > -1 && indice < listaAnotacoes.children.length) {
-    listaAnotacoes.children[indice].replaceWith(anotacaoHTML); 
+    listaAnotacoes.children[indice].replaceWith(anotacaoHTML);
   } else {
-    listaAnotacoes.appendChild(anotacaoHTML); 
+    listaAnotacoes.appendChild(anotacaoHTML);
   }
 }
 
-// salvar anotação 
+// salvar anotação
 function salvarAnotacao() {
   const tituloInput = document.getElementById('titulo');
   const conteudoTextarea = document.getElementById('conteudo');
-  const indiceAnotacao = parseInt(document.getElementById("modalCriarEditar").dataset.indiceAnotacao) || -1;
+  const indiceAnotacao =
+    parseInt(document.getElementById('modalCriarEditar').dataset.indiceAnotacao) || -1;
 
   const titulo = tituloInput.value.trim();
   const conteudo = conteudoTextarea.value.trim();
 
   if (!titulo || !conteudo) {
     mostrarMensagemErro('Título e conteúdo são obrigatórios!');
-    return; 
+    return;
   }
 
   const novaAnotacao = {
     id: gerarID(), // Gera um ID único para cada anotação (veremos mais tarde)
     titulo,
-    conteudo
-  }
+    conteudo,
+  };
   const anotacoes = recuperarAnotacoes();
   if (indiceAnotacao === -1) {
     anotacoes.push(novaAnotacao);
-    atualizarAnotacaoNaLista(anotacoes.length - 1, novaAnotacao); 
+    salvarAnotacoes(anotacoes)
+    carregarAnotacoes()
   } else {
     anotacoes[indiceAnotacao] = novaAnotacao;
-    atualizarAnotacaoNaLista(indiceAnotacao, novaAnotacao); 
+    salvarAnotacoes(anotacoes)
+    carregarAnotacoes()
   }
 
   salvarAnotacoes(anotacoes);
   fecharModal();
-  mostrarMensagemSucesso('Anotação salva com sucesso!');
+  console.log('Anotação salva com sucesso!');
 }
 
 // Inicialização da página
