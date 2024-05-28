@@ -55,9 +55,11 @@ function recuperarAnotacoes() {
   }
 }
 
-function criarElementoAnotacao(anotacao) {
+function criarElementoAnotacao(anotacao, index) {
   const li = document.createElement('li');
   li.classList.add('anotacao');
+
+  li.dataset.index = index;
 
   const h3 = document.createElement('h3');
   h3.textContent = anotacao.titulo;
@@ -82,24 +84,29 @@ function criarElementoAnotacao(anotacao) {
   return li;
 }
 
+// excluir anotação
+function excluirAnotacao(indice) {
+  if (confirm('Tem certeza que deseja excluir esta anotação?')) {
+    let anotacoes = recuperarAnotacoes();
+    anotacoes.splice(indice, 1);
+    salvarAnotacoes(anotacoes);
+    carregarAnotacoes();
+    mostrarMensagemSucesso('Anotação excluída com sucesso!');
+  }
+}
+
+function mostrarMensagemErro(mensagem) {
+  alert('Erro: ' + mensagem);
+}
+
 function preencherListaAnotacoes(anotacoes) {
   const listaAnotacoes = document.querySelector('.lista-anotacoes');
   listaAnotacoes.innerHTML = ''; 
 
-  anotacoes.forEach(anotacao => {
-    const anotacaoHTML = criarElementoAnotacao(anotacao);
+  anotacoes.forEach(anotacao, index => {
+    const anotacaoHTML = criarElementoAnotacao(anotacao, index);
     listaAnotacoes.appendChild(anotacaoHTML);
   });
-}
-
-function editarAnotacao(anotacao) {
-  const indiceAnotacao = recuperarAnotacoes().findIndex(a => a === anotacao);
-  if (indiceAnotacao !== -1) {
-    preencherModal(anotacao, indiceAnotacao);
-    abrirModalNovaAnotacao();
-  } else {
-    mostrarMensagemErro('Erro ao buscar anotação para edição.');
-  }
 }
 
 // atualizar a anotação na lista após salvar ou excluir
