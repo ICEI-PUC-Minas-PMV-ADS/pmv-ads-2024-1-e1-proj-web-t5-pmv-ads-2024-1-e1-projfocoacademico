@@ -88,7 +88,7 @@ cadastrarBtn.addEventListener("click", function (e) {
 function cadastrarUsuario() {
   if (cadastroValido()) {
     let listaUsuarios = JSON.parse(
-      localStorage.getItem("listaUsuarios") || "[]",
+      localStorage.getItem("listaUsuarios") || "[]"
     );
     listaUsuarios.push({
       nome: cadNome.value,
@@ -137,7 +137,9 @@ loginClose.addEventListener("click", function fecharModalClickBtn() {
 });
 
 window.addEventListener("click", function (event) {
-  if (event.target == loginModal) { fecharModalLogin(); }
+  if (event.target == loginModal) {
+    fecharModalLogin();
+  }
 });
 
 function fecharModalLogin() {
@@ -150,18 +152,70 @@ function getListaUsuarios() {
 }
 
 function isLoginValido(userEmail, userPassword) {
-  return getListaUsuarios().some(usuario => 
-    usuario.email === userEmail && usuario.senha === userPassword
+  return getListaUsuarios().some(
+    (usuario) => usuario.email === userEmail && usuario.senha === userPassword
   );
 }
 
 submitLoginBtn.addEventListener("click", function submitLoginUsuario(e) {
+  e.preventDefault();
   if (isLoginValido(loginEmail.value, loginSenha.value)) {
     localStorage.setItem("isLogado", true);
     alert("Logado com sucesso!");
     fecharModalLogin();
+    ocultarBotoes();
+    atualizarBotaoLogout();
   } else {
-    e.preventDefault()
+    e.preventDefault();
     alert("Email ou senha inválidos...");
   }
 });
+
+// função para ocultar o botão ao efetuar login
+function ocultarBotoes() {
+  const botoes = document.querySelectorAll(".default-btn");
+  botoes.forEach((botao) => {
+    botao.style.display = "none";
+  });
+}
+//função para exibir os botões de cadastro ao fazer logout
+function exibirBotoesCadastro() {
+  const botoes = document.querySelectorAll(".default-btn");
+  botoes.forEach((botao) => {
+    botao.style.display = "block";
+  });
+}
+//função ocultar ferramentas
+function ocultarFerramentas() {
+  const botaoFerramentas = document.querySelector(".tools-btn");
+  const isLogado = localStorage.getItem("isLogado") === "true";
+  if (!isLogado) {
+    botaoFerramentas.style.display = "none";
+  } else {
+    botaoFerramentas.style.display = "block";
+  }
+}
+window.addEventListener("load", function () {
+  ocultarFerramentas();
+});
+
+
+// Função para atualizar o botão para Logout e exibir os botões de cadastro
+function atualizarBotaoLogout() {
+  const botaoLogin = document.querySelector("#btn-login");
+  if (botaoLogin) {
+    botaoLogin.textContent = "Logout";
+    botaoLogin.addEventListener("click", function logoutUsuario() {
+      const confirmacao = confirm("Tem certeza que deseja sair?");
+      fecharModalLogin();
+      if (confirmacao) {
+        localStorage.setItem("isLogado", false);
+        botaoLogin.textContent = "Login";
+        botaoLogin.removeEventListener("click", logoutUsuario);
+        exibirBotoesCadastro();
+        ocultarFerramentas();
+        fecharModalLogin();
+      }
+    });
+  }
+}
