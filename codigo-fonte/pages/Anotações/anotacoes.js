@@ -69,13 +69,13 @@ function criarElementoAnotacao(anotacao) {
 
   const btnExcluir = document.createElement('button');
   btnExcluir.classList.add('btn-excluir');
-  btnExcluir.textContent = 'Excluir';
+  btnExcluir.innerHTML = '<i class="fa fa-trash"></i>'; 
   btnExcluir.onclick = () => excluirAnotacao(anotacao);
   li.appendChild(btnExcluir);
-
+  
   const btnEditar = document.createElement('button');
   btnEditar.classList.add('btn-editar');
-  btnEditar.textContent = 'Editar';
+  btnEditar.innerHTML = '<i class="fa fa-pen  "></i>';  
   btnEditar.onclick = () => editarAnotacao(anotacao);
   li.appendChild(btnEditar);
 

@@ -10,7 +10,7 @@ body {
 .home-body {
   background: var(--main-bg-color);
   background-repeat: no-repeat;
-  height: 100vh;
+  height: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -19,11 +19,6 @@ body {
 header {
   text-align: left;
   margin-bottom: 20px;
-}
-
-h1 {
-  font-size: 24px;
-  
 }
 
 .nav-options {
@@ -112,16 +107,19 @@ h1 {
   margin-bottom: 20px;
   padding: 1.5rem;
   border-radius: 10px;
-  max-width: 800px;
 }
 
 .lista-anotacoes {
   list-style: none; 
   padding: 0;
-  display: grid; 
+  display: flex; 
+  align-items: center;
+  justify-content: center;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
   gap: 20px; 
-  margin-bottom: 2rem
+  margin-block: 3rem;
+  width: 70rem;
+  flex-wrap: wrap;
 }
 
 .anotacao {
@@ -130,15 +128,17 @@ h1 {
   padding: 15px;
   background-color: var(--white-font-color); 
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+  width: 20rem;
+  height: 20rem;
   cursor: pointer; 
   transition: 0.3s; 
 }
 
 h2 {
-  margin: 0; 
   font-size: 1.2rem; 
   font-weight: var(--font-weight-bold); 
   color: var(--primary-color); 
+  text-align: center;
 }
 
 p {
@@ -152,16 +152,18 @@ p {
   border: 1px solid #ccc;
   cursor: pointer;
   margin-right: 5px;
+  font-size: 1.2rem;
+  color: white;
+  border: none;
+  background: none;
 }
 
 .btn-excluir {
-  background-color: #ff4d4d;
-  color: white;
+  color: #ff4d4d;
 }
 
 .btn-editar {
-  background-color: #ffc107;
-  color: black;
+  color: #ffc107;
 }
 
 #modalCriarEditar {
