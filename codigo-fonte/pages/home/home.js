@@ -173,49 +173,45 @@ submitLoginBtn.addEventListener("click", function submitLoginUsuario(e) {
 
 // função para ocultar o botão ao efetuar login
 function ocultarBotoes() {
-  const botoes = document.querySelectorAll(".default-btn");
+  const botoes = document.querySelectorAll(".cadastro-btn");
   botoes.forEach((botao) => {
     botao.style.display = "none";
   });
 }
+
 //função para exibir os botões de cadastro ao fazer logout
 function exibirBotoesCadastro() {
-  const botoes = document.querySelectorAll(".default-btn");
+  const botoes = document.querySelectorAll(".cadastro-btn");
   botoes.forEach((botao) => {
     botao.style.display = "block";
   });
 }
+
 //função ocultar ferramentas
 function ocultarFerramentas() {
-  const botaoFerramentas = document.querySelector(".tools-btn");
-  const isLogado = localStorage.getItem("isLogado") === "true";
-  if (!isLogado) {
-    botaoFerramentas.style.display = "none";
-  } else {
-    botaoFerramentas.style.display = "block";
+    const botaoFerramentas = document.querySelector(".tools-btn");
+    if (!localStorage.getItem("isLogado")) {
+      botaoFerramentas.style.display = "none";
+    } else {
+      botaoFerramentas.style.display = "block";
+    }
   }
-}
-window.addEventListener("load", function () {
+  window.addEventListener("load", function () {
   ocultarFerramentas();
 });
-
 
 // Função para atualizar o botão para Logout e exibir os botões de cadastro
 function atualizarBotaoLogout() {
   const botaoLogin = document.querySelector("#btn-login");
-  if (botaoLogin) {
-    botaoLogin.textContent = "Logout";
-    botaoLogin.addEventListener("click", function logoutUsuario() {
-      const confirmacao = confirm("Tem certeza que deseja sair?");
+  botaoLogin.textContent = "Logout";
+  botaoLogin.addEventListener("click", function logoutUsuario() {
+    if (confirm("Tem certeza que deseja sair?")) {
+      localStorage.setItem("isLogado", false);
+      botaoLogin.textContent = "Login";
+      botaoLogin.removeEventListener("click", logoutUsuario);
+      exibirBotoesCadastro();
+      ocultarFerramentas();
       fecharModalLogin();
-      if (confirmacao) {
-        localStorage.setItem("isLogado", false);
-        botaoLogin.textContent = "Login";
-        botaoLogin.removeEventListener("click", logoutUsuario);
-        exibirBotoesCadastro();
-        ocultarFerramentas();
-        fecharModalLogin();
-      }
-    });
-  }
+    }
+  }); 
 }
