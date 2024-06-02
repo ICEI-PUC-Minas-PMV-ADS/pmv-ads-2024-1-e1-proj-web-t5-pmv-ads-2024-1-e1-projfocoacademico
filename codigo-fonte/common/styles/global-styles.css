@@ -4,7 +4,7 @@
   --white-font-color: #fff;
   --font-family: "Poppins", sans-serif;
   --font-weight-bold: 900;
-  --font-weight-thin: 200;  
+  --font-weight-thin: 200;
   --primary-color: #719bec;
 }
 
@@ -32,16 +32,21 @@
   }
 }
 
+.navbar {
+  width: 100vw;
+  height: 5rem;
+  display: flex;
+  align-items: center;
+}
+
 .nav-options {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  height: 100%;
   list-style: none;
-  margin-left: 44rem;
+  margin: 1rem 2rem 1rem auto;
   gap: 2rem;
-  margin-right: 2rem;
 }
 
 .option {

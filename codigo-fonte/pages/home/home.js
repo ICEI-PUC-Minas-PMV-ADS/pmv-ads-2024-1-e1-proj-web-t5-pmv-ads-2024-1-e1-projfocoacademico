@@ -1,6 +1,9 @@
+/* Elements Homepage */
+const homepageLink = document.querySelector(".btn-home");
+
 /* Elements-Cadastro */
 const cadastroModal = document.querySelector(".modal-container");
-const cadastroBtn = document.querySelector(".default-btn");
+const cadastroBtns = document.querySelectorAll(".default-btn");
 const cadastroClose = document.querySelector(".btn-close-cadastro");
 const cadNome = document.querySelector("#cadNome");
 const cadEmail = document.querySelector("#cadEmail");
@@ -27,10 +30,17 @@ const loginEmail = document.querySelector("#loginEmail");
 const loginSenha = document.querySelector("#loginSenha");
 const submitLoginBtn = document.querySelector("#btn-submit-login");
 
+/* Events Homepage */
+homepageLink.addEventListener("click", function goToHomepage() {
+  window.location.href = "./index.html";
+});
+
 /* Events Cadastro */
-cadastroBtn.addEventListener("click", function abrirModalCadastro() {
-  cadastroModal.style.display = "block";
-  limparFormularioCadastro();
+cadastroBtns.forEach((cadastroBtn) => {
+  cadastroBtn.addEventListener("click", function abrirModalCadastro() {
+    cadastroModal.style.display = "block";
+    limparFormularioCadastro();
+  });
 });
 
 cadastroClose.addEventListener("click", function fecharModalCadastro() {
@@ -88,7 +98,7 @@ cadastrarBtn.addEventListener("click", function (e) {
 function cadastrarUsuario() {
   if (cadastroValido()) {
     let listaUsuarios = JSON.parse(
-      localStorage.getItem("listaUsuarios") || "[]"
+      localStorage.getItem("listaUsuarios") || "[]",
     );
     listaUsuarios.push({
       nome: cadNome.value,
@@ -153,7 +163,7 @@ function getListaUsuarios() {
 
 function isLoginValido(userEmail, userPassword) {
   return getListaUsuarios().some(
-    (usuario) => usuario.email === userEmail && usuario.senha === userPassword
+    (usuario) => usuario.email === userEmail && usuario.senha === userPassword,
   );
 }
 
@@ -189,20 +199,27 @@ function exibirBotoesCadastro() {
 
 //função ocultar ferramentas
 function ocultarFerramentas() {
-    const botaoFerramentas = document.querySelector(".tools-btn");
-    if (!localStorage.getItem("isLogado")) {
-      botaoFerramentas.style.display = "none";
-    } else {
-      botaoFerramentas.style.display = "block";
-    }
+  const botaoFerramentas = document.querySelector(".tools-btn");
+  if (localStorage.getItem("isLogado") === "true") {
+    botaoFerramentas.style.display = "block";
+  } else {
+    botaoFerramentas.style.display = "none";
   }
-  window.addEventListener("load", function () {
+}
+window.addEventListener("load", function () {
   ocultarFerramentas();
+  if (localStorage.getItem("isLogado") === "true") {
+    atualizarBotaoLogout();
+    ocultarBotoes();
+  } else {
+    exibirBotoesCadastro();
+  }
 });
 
 // Função para atualizar o botão para Logout e exibir os botões de cadastro
 function atualizarBotaoLogout() {
   const botaoLogin = document.querySelector("#btn-login");
+  ocultarFerramentas();
   botaoLogin.textContent = "Logout";
   botaoLogin.addEventListener("click", function logoutUsuario() {
     if (confirm("Tem certeza que deseja sair?")) {
@@ -213,5 +230,5 @@ function atualizarBotaoLogout() {
       ocultarFerramentas();
       fecharModalLogin();
     }
-  }); 
+  });
 }
