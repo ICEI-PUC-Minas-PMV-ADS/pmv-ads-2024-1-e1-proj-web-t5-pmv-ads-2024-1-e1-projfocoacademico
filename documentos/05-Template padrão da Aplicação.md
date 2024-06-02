@@ -43,7 +43,7 @@ Modal que é exibido a partir da página Home para fazer login no usupario dentr
 
 Nesta parte do site é possível a criação, visualização e edição das anotações do usuário.
 
-![Tela de Anotações](../documentos/img/Projeto%20de%20interface/TelaNotas.png)
+![Tela de Anotações](../documentos/img/Projeto%20de%20interface/TelaAnotacoes.png)
 
 ### Criar uma Anotação
 
@@ -61,7 +61,7 @@ Modal para possibilitar a edição de uma anotação por parte do usuário.
 
 Tela da aplicação com a ferramenta "Relógio Pomodoro".
 
-![Tela da Ferramenta Pomodoro](../documentos/img/Projeto%20de%20interface/TelaRelogioPolmodoro.png)
+![Tela da Ferramenta Pomodoro](../documentos/img/Projeto%20de%20interface/TelaRelogioPomodoro.png)
 
 ## Escolha de Logo
 
