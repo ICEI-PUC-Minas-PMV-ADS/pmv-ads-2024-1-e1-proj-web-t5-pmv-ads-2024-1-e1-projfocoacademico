@@ -80,13 +80,13 @@ function criarElementoAnotacao(anotacao, index) {
   const btnExcluir = document.createElement('button');
   btnExcluir.classList.add('btn-excluir');
   btnExcluir.textContent = 'Excluir';
-  btnExcluir.onclick = (e) => excluirAnotacao(e.target.closest('.anotacao').dataset.index);
+  btnExcluir.onclick = () => excluirAnotacao(anotacao);
   li.appendChild(btnExcluir);
-
+  
   const btnEditar = document.createElement('button');
   btnEditar.classList.add('btn-editar');
   btnEditar.textContent = 'Editar';
-  btnEditar.onclick = (e) => abrirModalEditarAnotacao(e.target.closest('.anotacao').dataset.index);
+  btnEditar.onclick = () => editarAnotacao(anotacao);
   li.appendChild(btnEditar);
 
   return li;
