@@ -30,6 +30,8 @@ const loginEmail = document.querySelector("#loginEmail");
 const loginSenha = document.querySelector("#loginSenha");
 const submitLoginBtn = document.querySelector("#btn-submit-login");
 
+
+
 /* Events Homepage */
 homepageLink.addEventListener("click", function goToHomepage() {
   window.location.href = "./index.html";
@@ -140,6 +142,7 @@ function cadastroValido() {
 /* Events-Modal-Login */
 loginBtn.addEventListener("click", function abrirModalLogin() {
   loginModal.style.display = "block";
+  limparFormLogin();
 });
 
 loginClose.addEventListener("click", function fecharModalClickBtn() {
@@ -151,7 +154,30 @@ window.addEventListener("click", function (event) {
     fecharModalLogin();
   }
 });
+submitLoginBtn.addEventListener("click", function submitLoginUsuario(e) {
+  e.preventDefault();
+  if (isLoginValido(loginEmail.value, loginSenha.value)) {
+    localStorage.setItem("isLogado", true);
+    alert("Logado com sucesso!");
+    fecharModalLogin();
+    ocultarBotoes();
+    atualizarBotaoLogout();
+  } else {
+    e.preventDefault();
+    alert("Email ou senha inválidos...");
+  }
+});
+window.addEventListener("load", function () {
+  ocultarFerramentas();
+  if (localStorage.getItem("isLogado") === "true") {
+    atualizarBotaoLogout();
+    ocultarBotoes();
+  } else {
+    exibirBotoesCadastro();
+  }
+});
 
+//funções modal login
 function fecharModalLogin() {
   loginModal.style.display = "none";
 }
@@ -176,19 +202,10 @@ function mostrarSenha() {
     inputPass.setAttribute("type", "password");
   }
 }
-submitLoginBtn.addEventListener("click", function submitLoginUsuario(e) {
-  e.preventDefault();
-  if (isLoginValido(loginEmail.value, loginSenha.value)) {
-    localStorage.setItem("isLogado", true);
-    alert("Logado com sucesso!");
-    fecharModalLogin();
-    ocultarBotoes();
-    atualizarBotaoLogout();
-  } else {
-    e.preventDefault();
-    alert("Email ou senha inválidos...");
-  }
-});
+function limparFormLogin() {
+  loginEmail.value = "";
+  loginSenha.value = "";
+}
 
 // função para ocultar o botão ao efetuar login
 function ocultarBotoes() {
@@ -215,15 +232,6 @@ function ocultarFerramentas() {
     botaoFerramentas.style.display = "none";
   }
 }
-window.addEventListener("load", function () {
-  ocultarFerramentas();
-  if (localStorage.getItem("isLogado") === "true") {
-    atualizarBotaoLogout();
-    ocultarBotoes();
-  } else {
-    exibirBotoesCadastro();
-  }
-});
 
 // Função para atualizar o botão para Logout e exibir os botões de cadastro
 function atualizarBotaoLogout() {
@@ -235,10 +243,10 @@ function atualizarBotaoLogout() {
       localStorage.setItem("isLogado", false);
       botaoLogin.textContent = "Login";
       botaoLogin.removeEventListener("click", logoutUsuario);
+
       exibirBotoesCadastro();
       ocultarFerramentas();
       fecharModalLogin();
     }
   });
 }
-
