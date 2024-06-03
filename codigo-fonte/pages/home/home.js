@@ -23,7 +23,7 @@ const labelSenhaOriginalHTML =
   "<i class='bx bxs-lock-alt' style='color:#f2f2f2'></i> Senha";
 
 /*Elements-Modal-Login*/
-const loginModal = document.querySelector(".modal-container2");
+const loginModal = document.querySelector(".modal-container-login");
 const loginBtn = document.querySelector(".btn-login");
 const loginClose = document.querySelector(".btn-close-login");
 const loginEmail = document.querySelector("#loginEmail");
@@ -98,7 +98,7 @@ cadastrarBtn.addEventListener("click", function (e) {
 function cadastrarUsuario() {
   if (cadastroValido()) {
     let listaUsuarios = JSON.parse(
-      localStorage.getItem("listaUsuarios") || "[]",
+      localStorage.getItem("listaUsuarios") || "[]"
     );
     listaUsuarios.push({
       nome: cadNome.value,
@@ -163,10 +163,19 @@ function getListaUsuarios() {
 
 function isLoginValido(userEmail, userPassword) {
   return getListaUsuarios().some(
-    (usuario) => usuario.email === userEmail && usuario.senha === userPassword,
+    (usuario) => usuario.email === userEmail && usuario.senha === userPassword
   );
 }
 
+function mostrarSenha() {
+  const inputPass = document.getElementById("loginSenha");
+  const btnShowPass = document.getElementById("btn-senha");
+  if (inputPass.type === "password") {
+    inputPass.setAttribute("type", "text");
+  } else {
+    inputPass.setAttribute("type", "password");
+  }
+}
 submitLoginBtn.addEventListener("click", function submitLoginUsuario(e) {
   e.preventDefault();
   if (isLoginValido(loginEmail.value, loginSenha.value)) {
@@ -232,3 +241,4 @@ function atualizarBotaoLogout() {
     }
   });
 }
+

@@ -72,6 +72,7 @@
   display: flex;
   flex-direction: column;
   gap: 0px;
+  position: relative;
 }
 
 .input-wrapper label {
@@ -147,7 +148,7 @@
 }
 
 /*Modal login*/
-.modal-container2 {
+.modal-container-login {
   display: none;
   position: fixed;
   z-index: 1;
@@ -193,6 +194,13 @@
 
   transition: 0.4s;
   cursor: pointer;
+}
+.bx-low-vision{
+  cursor: pointer;
+  position: absolute;
+  right: 3%;
+  top: 30px;
+
 }
 #btn-entrar:hover,
 .btn-close-login:hover {
