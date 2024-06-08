@@ -147,16 +147,14 @@ Baseados nas histórias de usuários anteriores temos os seguintes requisitos pa
 
 | ID    | Descrição                                                                                                                                                                          | Prioridade |
 | ----- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------- |
-| RF-01 | O sistema deve permitir ao usuário cadastro e login na plataforma.                                                                                                                 | ALTA       |
-| RF-02 | O sistema deve fornecer um espaço que permita o usuário adicionar, editar, excluir e visualizar suas dúvidas já registradas.                                                       | ALTA       |
-| RF-03 | O sistema deve oferecer acesso a ferramentas que auxiliem o usuário a manter o foco durante determinada atividade (relógio pomodoro).                                              | ALTA       |
-| RF-04 | O sistema deve oferecer recursos que permitam criar anotações de diversos temas, para desenvolver novas habilidades.                                                               | MÉDIA      |
-| RF-05 | O sistema deve permitir categorizar as anotações por áreas do conhecimento além de permitir uma busca rápida e fácil de anotações específicas.                                     | MÉDIA      |
-| RF-06 | O sistema deve organizar o material de estudo do usuário candidato a concurso público de forma clara e eficiente.                                                                  | BAIXA      |
-| RF-07 | O sistema deve permitir ao usuário um controle de agenda com notificação para organização de provas e trabalhos a entregar.                                                        | BAIXA      |
-| RF-08 | O sistema deve permitir ao usuário vincular anotações, dados e resultados de diferentes fontes, facilitando a construção de conhecimento científico.                               | MÉDIA      |
-| RF-09 | O sistema deve oferecer ferramentas de formatação avançada, permitindo ao usuário definir estilos de parágrafo, fontes, espaçamento entre linhas e outras configurações de layout. | MÉDIA      |
-| RF-10 | O sistema deve fornecer informação sobre o objetivo principal da plataforma por meio de uma tela "Sobre"                                                                           | ALTA       |
+| RF-01 | A aplicação deve permitir ao usuário cadastrar uma conta.                               | ALTA       |
+| RF-02 | A aplicação deve permitir ao usuário fazer o login da sua conta.                       | ALTA       |
+| RF-03 | A aplicação deve permitir ao usuário criar novas anotações.                            | MÉDIA      |
+| RF-04 | A aplicação deve permitir ao usuário editar anotações existentes.                      | MÉDIA      |
+| RF-05 | A aplicação deve permitir ao usuário excluir anotações existentes.                     | MÉDIA      |
+| RF-06 | A aplicação deve permitir ao usuário utilizar a técnica Pomodoro.                      | MÉDIA      |
+| RF-07 | A aplicação deve apresentar informação sobre o objetivo principal da plataforma.       | BAIXA      |
+
 
 \*\*Prioridade: Alta / Média / Baixa.
 
