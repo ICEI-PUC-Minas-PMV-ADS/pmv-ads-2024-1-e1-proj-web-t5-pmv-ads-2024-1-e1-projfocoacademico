@@ -18,21 +18,20 @@
 
 <body class="home-body">
     <nav class="navbar navbar-expand-lg">
-        <a class="navbar-brand" href=""><img class="logo" src="../../assets/img/focoAcademicoIcon.png" /></a>
+        <a class="navbar-brand" href="./index.html"><img class="logo" src="../../assets/img/focoAcademicoIcon.png" /></a>
         <ul class="nav-options">
-            <li class="option btn-home">Home</li>
-            <li class="option btn-login">Login</li>
-            <div class="dropdown">
-                <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Ferramentas
-                </button>
+            <li class="option btn-home"><a href="./index.html">Home</a></li>
+            <li class="option btn-sobre"><a href="../Sobre/sobre.html">Sobre</a></li>
+            <li class="option btn-login" id="btn-login">Login</li>
+            <li class="option dropdown tools-btn"> <a class="dropdown-toggle" href="#" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Ferramentas</a>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                  <a class="dropdown-item" href="../Anotações/anotacoes.html">Anotações</a>
-                    <a class="dropdown-item" href="">Relógio Polmodoro</a>
+                    <a class="dropdown-item" href="../Anotações/anotacoes.html">Anotações</a>
+                    <a class="dropdown-item" href="index.html">Relógio Polmodoro</a>
                 </div>
-              </div>
+            </li>
         </ul>
-        <button class="default-btn"><i class="fas fa-user" style="margin-right: 0.5rem;"></i> Cadastre-se</button>
+        <button class="default-btn cadastro-btn"><i class="fas fa-user" style="margin-right: 0.5rem;"></i> Cadastre-se</button>
     </nav>
     <h1 class="main-title-home title">
         O seu espaço para estudar
@@ -40,7 +39,12 @@
     <h2 class="subtitle-home">Um ambiente onde você reune as melhores <br>
         ferramentas para estudar e atingir seus objetivos
     </h2>
-    <button class="default-btn home-btn"><i class="fas fa-rocket" style="margin-right: 0.5rem;"></i> Cadastre-se</button>
+    <button class="default-btn home-btn cadastro-btn"><i class="fas fa-rocket" style="margin-right: 0.5rem;"></i> Cadastre-se</button>
+    <footer class="footer">
+        <div class="footerContainer">
+            <p class="footerTexto">PROJETO: DESENVOLVIMENTO - 4577105 - TECNOLOGIA EM ANÁLISE E DESENVOLVIMENTO DE SISTEMAS - EAD - VIRTUAL - PUC - G1_18_30</p>
+        </div>
+    </footer>
     <div class="modal-container">
         <form id="modal-cadastro">
             <span class="btn-close-cadastro">x</span>
@@ -59,11 +63,11 @@
                 <input type="password" id="cadSenha" name="senha">
             </div>
 
-            <button id="btn-cadastrar">Cadastrar agora</button>
+            <button class=".cadastro-btn" id="btn-cadastrar">Cadastrar agora</button>
         </form>
     </div>
 
-    <div class="modal-container2">
+    <div class="modal-container-login">
         <form id="modal-login">
             <span class="btn-close-login">x</span>
             <legend>Entrar agora</legend>
@@ -71,14 +75,18 @@
             <div class="input-wrapper">
                 <label for="email"><i class='bx bxs-envelope' style='color:#f2f2f2'></i> Email</label>
                 <input type="email" id="loginEmail" name="email">
+
             </div>
             <div class="input-wrapper">
                 <label for="senha"><i class='bx bxs-lock-alt' style='color:#f2f2f2'></i> Senha</label>
                 <input type="password" id="loginSenha" name="senha">
+                <i class='bx bx-low-vision' style='color:rgba(0, 0, 0, 0.6)' id="btn-senha" onclick="mostrarSenha()"></i>
+
             </div>
 
             <button id="btn-submit-login"> Entrar </button>
         </form>
+
     </div>
     <script src="./home.js" defer></script>
 </body>

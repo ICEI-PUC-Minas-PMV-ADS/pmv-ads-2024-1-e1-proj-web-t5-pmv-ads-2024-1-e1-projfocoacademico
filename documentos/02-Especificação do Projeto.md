@@ -125,20 +125,19 @@
 </tbody>
 </table>
 
-
 ## Histórias de Usuários
 
 Baseados nos perfis analisados anteriormente obtivemos as seguintes histórias de usuário:
 
-|EU COMO... `QUEM`   | QUERO/PRECISO ... `O QUE` |PARA ... `PORQUE`                 |
-|--------------------|---------------------------|----------------------------------|
-| Estudante universitário,| quero ter um espaço para registrar as principais ideias e conceitos abordados em aula,  | para poder revisá-las facilmente antes das provas e trabalhos.|
-| Estudante do ensino médio, | quero utilizar ferramentas que me ajudem a manter o foco durante os estudos, | para otimizar o meu tempo e assimilar melhor o conteúdo das disciplinas.|
-| Profissional em busca de aprimoramento, | desejo organizar minhas anotações por tema, como análise de palavras-chave, otimização de conteúdo e construção de links | para me tornar mais competitiva no mercado de trabalho e pleitear melhores oportunidades.|
-| Vestibulando,| quero organizar minhas anotações de aula de biologia, química e física, de forma eficiente, | para poder revisá-las com facilidade e me preparar melhor para as provas.|
-| Concurseiro, | quero organizar meus materiais de estudo de forma eficiente, | para otimizar meu tempo e aumentar minhas chances de aprovação.|
-| Pesquisadora, | desejo organizar e analisar meus dados de forma eficiente, estabelecendo conexões entre diferentes anotações, resultados e imagens, | para identificar padrões, construir conhecimento científico.|
-| Escritora, | desejo criar anotações detalhadas sobre a história, incluindo perfis dos personagens, cenários e subtramas, | para construir uma narrativa coesa, envolvente e surpreendente para o leitor.|
+| EU COMO... `QUEM`                       | QUERO/PRECISO ... `O QUE`                                                                                                           | PARA ... `PORQUE`                                                                         |
+| --------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
+| Estudante universitário,                | quero ter um espaço para registrar as principais ideias e conceitos abordados em aula,                                              | para poder revisá-las facilmente antes das provas e trabalhos.                            |
+| Estudante do ensino médio,              | quero utilizar ferramentas que me ajudem a manter o foco durante os estudos,                                                        | para otimizar o meu tempo e assimilar melhor o conteúdo das disciplinas.                  |
+| Profissional em busca de aprimoramento, | desejo organizar minhas anotações por tema, como análise de palavras-chave, otimização de conteúdo e construção de links            | para me tornar mais competitiva no mercado de trabalho e pleitear melhores oportunidades. |
+| Vestibulando,                           | quero organizar minhas anotações de aula de biologia, química e física, de forma eficiente,                                         | para poder revisá-las com facilidade e me preparar melhor para as provas.                 |
+| Concurseiro,                            | quero organizar meus materiais de estudo de forma eficiente,                                                                        | para otimizar meu tempo e aumentar minhas chances de aprovação.                           |
+| Pesquisadora,                           | desejo organizar e analisar meus dados de forma eficiente, estabelecendo conexões entre diferentes anotações, resultados e imagens, | para identificar padrões, construir conhecimento científico.                              |
+| Escritora,                              | desejo criar anotações detalhadas sobre a história, incluindo perfis dos personagens, cenários e subtramas,                         | para construir uma narrativa coesa, envolvente e surpreendente para o leitor.             |
 
 ## Requisitos do Projeto
 
@@ -146,29 +145,27 @@ Baseados nas histórias de usuários anteriores temos os seguintes requisitos pa
 
 ### Requisitos Funcionais
 
-|ID    | Descrição                | Prioridade |
-|-------|---------------------------------|----|
-| RF-01 |  O sistema deve permitir ao usuário cadastro e login na plataforma. | ALTA | 
-| RF-02 |  O sistema deve fornecer um espaço que permita o usuário adicionar, editar, excluir e visualizar suas dúvidas já registradas. | ALTA | 
-| RF-03 |  O sistema deve oferecer acesso a ferramentas que auxiliem o usuário a manter o foco durante determinada atividade (relógio pomodoro). | ALTA | 
-| RF-04 |  O sistema deve oferecer recursos que permitam criar anotações de diversos temas, para desenvolver novas habilidades. | MÉDIA | 
-| RF-05 |  O sistema deve permitir categorizar as anotações por áreas do conhecimento além de permitir uma busca rápida e fácil de anotações específicas. | MÉDIA | 
-| RF-06 |  O sistema deve organizar o material de estudo do usuário candidato a concurso público de forma clara e eficiente. | BAIXA | 
-| RF-07 |  O sistema deve permitir ao usuário um controle de agenda com notificação para organização de provas e trabalhos a entregar. | BAIXA | 
-| RF-08 |  O sistema deve permitir ao usuário vincular anotações, dados e resultados de diferentes fontes, facilitando a construção de conhecimento científico. | MÉDIA | 
-| RF-09 |  O sistema deve oferecer ferramentas de formatação avançada, permitindo ao usuário definir estilos de parágrafo, fontes, espaçamento entre linhas e outras configurações de layout. | MÉDIA | 
+| ID    | Descrição                                                                                                                                                                          | Prioridade |
+| ----- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------- |
+| RF-01 | A aplicação deve permitir ao usuário cadastrar uma conta.                               | ALTA       |
+| RF-02 | A aplicação deve permitir ao usuário fazer o login da sua conta.                       | ALTA       |
+| RF-03 | A aplicação deve permitir ao usuário criar novas anotações.                            | MÉDIA      |
+| RF-04 | A aplicação deve permitir ao usuário editar anotações existentes.                      | MÉDIA      |
+| RF-05 | A aplicação deve permitir ao usuário excluir anotações existentes.                     | MÉDIA      |
+| RF-06 | A aplicação deve permitir ao usuário utilizar a técnica Pomodoro.                      | MÉDIA      |
+| RF-07 | A aplicação deve apresentar informação sobre o objetivo principal da plataforma.       | BAIXA      |
 
-**Prioridade: Alta / Média / Baixa. 
+
+\*\*Prioridade: Alta / Média / Baixa.
 
 ### Requisitos não Funcionais
 
-|ID      | Descrição               |Prioridade |
-|--------|-------------------------|----|
-| RNF-01 |  O sistema deve oferecer uma interface intuitiva. | ALTA | 
-| RNF-02 |  O sistema deve ser confiável para não perder informações. | ALTA | 
-| RNF-03 |  O sistema deve garantir segurança contra acesso não autorizado à conta. | MÉDIA | 
-| RNF-04 |  O sistema deve ser de baixo consumo de recursos computacionais. | BAIXA | 
-| RNF-05 |  O sistema deve garantir segurança contra acesso não autorizado à conta. | BAIXA | 
+| ID     | Descrição                                                               | Prioridade |
+| ------ | ----------------------------------------------------------------------- | ---------- |
+| RNF-01 | O sistema deve oferecer uma interface intuitiva.                        | ALTA       |
+| RNF-02 | O sistema deve ser confiável para não perder informações.               | ALTA       |
+| RNF-03 | O sistema deve garantir segurança contra acesso não autorizado à conta. | MÉDIA      |
+| RNF-04 | O sistema deve ser de baixo consumo de recursos computacionais.         | BAIXA      |
+| RNF-05 | O sistema deve garantir segurança contra acesso não autorizado à conta. | BAIXA      |
 
-**Prioridade: Alta / Média / Baixa. 
-
+\*\*Prioridade: Alta / Média / Baixa.

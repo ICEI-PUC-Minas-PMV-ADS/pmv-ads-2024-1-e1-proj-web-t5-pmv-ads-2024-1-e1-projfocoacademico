@@ -1,6 +1,6 @@
 // armazenamento local
 function salvarAnotacoes(anotacoes) {
-  localStorage.setItem('anotacoes', JSON.stringify(anotacoes));
+  localStorage.setItem("anotacoes", JSON.stringify(anotacoes));
 }
 
 // gerenciar o modal
@@ -55,7 +55,7 @@ function carregarAnotacoes() {
 }
 
 function recuperarAnotacoes() {
-  const anotacoesSalvas = localStorage.getItem('anotacoes');
+  const anotacoesSalvas = localStorage.getItem("anotacoes");
   if (anotacoesSalvas) {
     return JSON.parse(anotacoesSalvas);
   } else {
@@ -73,7 +73,7 @@ function criarElementoAnotacao(anotacao, index) {
   h3.textContent = anotacao.titulo;
   li.appendChild(h3);
 
-  const p = document.createElement('p');
+  const p = document.createElement("p");
   p.textContent = anotacao.conteudo;
   li.appendChild(p);
 
@@ -166,11 +166,20 @@ function salvarAnotacao() {
 }
 
 // Inicialização da página
-window.addEventListener('DOMContentLoaded', () => {
+window.addEventListener("DOMContentLoaded", () => {
   carregarAnotacoes(); // Carrega as anotações ao carregar a página
-  const btnCadastreSe = document.querySelector('.btn-cadastre-se');
-  const btnNovaAnotacao = document.querySelector('.btn-nova-anotacao');
+  const btnCadastreSe = document.querySelector(".btn-cadastre-se");
+  const btnNovaAnotacao = document.querySelector(".btn-nova-anotacao");
   // Adiciona manipuladores de eventos para os botões
-  btnCadastreSe.addEventListener('click', abrirModalCadastro);
-  btnNovaAnotacao.addEventListener('click', abrirModalNovaAnotacao);
+  btnCadastreSe.addEventListener("click", abrirModalCadastro);
+  btnNovaAnotacao.addEventListener("click", abrirModalNovaAnotacao);
+});
+
+const botaoLogout = document.querySelector("#btn-logout");
+
+botaoLogout.addEventListener("click", function logoutUsuario() {
+  if (confirm("Tem certeza que deseja sair?")) {
+    localStorage.setItem("isLogado", false);
+    window.location.href = "../home/index.html";
+  }
 });

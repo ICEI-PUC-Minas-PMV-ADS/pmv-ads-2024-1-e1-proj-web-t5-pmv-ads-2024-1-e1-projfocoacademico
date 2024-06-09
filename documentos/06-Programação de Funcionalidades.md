@@ -151,6 +151,33 @@ Os artefatos da funcionalidade se encontra em [caminho aqui] e são os seguintes
 
 [Digitar aqui as instruções para usar o relógio pomodoro].
 
+## Tela Sobre (RF-10)
+
+Responsável: Beatrice
+
+O site deverá contar com uma página _Sobre_ para o usuário ter pleno entendimento do projeto. Para esta tarefa foram utilizadas as linguagens HTML, CSS.
+
+[Adicione imagem da funcionalidade/tela]
+
+#### Requisito atendido
+
+RF-10: O site deve permitir ao usuário acessar uma tela "Sobre" para obter informação sobre o projeto.
+
+#### Artefatos da funcionalidade
+
+Os artefatos da funcionalidade se encontra em "pages/Sobre" e são os seguintes:
+
+- sobre.html
+- sobre.css
+
+#### Estrutura de Dados
+
+[sobre.html](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e1-proj-web-t5-pmv-ads-2024-1-e1-projfocoacademico/blob/main/codigo-fonte/pages/Sobre/sobre.html)
+
+#### Instruções de acesso
+
+Na tela inicial é possível acessar informações sobre o projeto no link "Sobre".
+
 > **Links Úteis**:
 >
 > - [Trabalhando com HTML5 Local Storage e JSON](https://www.devmedia.com.br/trabalhando-com-html5-local-storage-e-json/29045)
