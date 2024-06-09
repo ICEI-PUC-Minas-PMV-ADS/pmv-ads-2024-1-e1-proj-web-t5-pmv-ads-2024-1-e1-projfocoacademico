@@ -23,12 +23,14 @@ const labelSenhaOriginalHTML =
   "<i class='bx bxs-lock-alt' style='color:#f2f2f2'></i> Senha";
 
 /*Elements-Modal-Login*/
-const loginModal = document.querySelector(".modal-container2");
+const loginModal = document.querySelector(".modal-container-login");
 const loginBtn = document.querySelector(".btn-login");
 const loginClose = document.querySelector(".btn-close-login");
 const loginEmail = document.querySelector("#loginEmail");
 const loginSenha = document.querySelector("#loginSenha");
 const submitLoginBtn = document.querySelector("#btn-submit-login");
+
+
 
 /* Events Homepage */
 homepageLink.addEventListener("click", function goToHomepage() {
@@ -98,7 +100,7 @@ cadastrarBtn.addEventListener("click", function (e) {
 function cadastrarUsuario() {
   if (cadastroValido()) {
     let listaUsuarios = JSON.parse(
-      localStorage.getItem("listaUsuarios") || "[]",
+      localStorage.getItem("listaUsuarios") || "[]"
     );
     listaUsuarios.push({
       nome: cadNome.value,
@@ -140,6 +142,7 @@ function cadastroValido() {
 /* Events-Modal-Login */
 loginBtn.addEventListener("click", function abrirModalLogin() {
   loginModal.style.display = "block";
+  limparFormLogin();
 });
 
 loginClose.addEventListener("click", function fecharModalClickBtn() {
@@ -151,22 +154,6 @@ window.addEventListener("click", function (event) {
     fecharModalLogin();
   }
 });
-
-function fecharModalLogin() {
-  loginModal.style.display = "none";
-}
-
-function getListaUsuarios() {
-  const usuariosJSON = localStorage.getItem("listaUsuarios") || "[]";
-  return JSON.parse(usuariosJSON);
-}
-
-function isLoginValido(userEmail, userPassword) {
-  return getListaUsuarios().some(
-    (usuario) => usuario.email === userEmail && usuario.senha === userPassword,
-  );
-}
-
 submitLoginBtn.addEventListener("click", function submitLoginUsuario(e) {
   e.preventDefault();
   if (isLoginValido(loginEmail.value, loginSenha.value)) {
@@ -180,6 +167,45 @@ submitLoginBtn.addEventListener("click", function submitLoginUsuario(e) {
     alert("Email ou senha inválidos...");
   }
 });
+window.addEventListener("load", function () {
+  ocultarFerramentas();
+  if (localStorage.getItem("isLogado") === "true") {
+    atualizarBotaoLogout();
+    ocultarBotoes();
+  } else {
+    exibirBotoesCadastro();
+  }
+});
+
+//funções modal login
+function fecharModalLogin() {
+  loginModal.style.display = "none";
+}
+
+function getListaUsuarios() {
+  const usuariosJSON = localStorage.getItem("listaUsuarios") || "[]";
+  return JSON.parse(usuariosJSON);
+}
+
+function isLoginValido(userEmail, userPassword) {
+  return getListaUsuarios().some(
+    (usuario) => usuario.email === userEmail && usuario.senha === userPassword
+  );
+}
+
+function mostrarSenha() {
+  const inputPass = document.getElementById("loginSenha");
+  const btnShowPass = document.getElementById("btn-senha");
+  if (inputPass.type === "password") {
+    inputPass.setAttribute("type", "text");
+  } else {
+    inputPass.setAttribute("type", "password");
+  }
+}
+function limparFormLogin() {
+  loginEmail.value = "";
+  loginSenha.value = "";
+}
 
 // função para ocultar o botão ao efetuar login
 function ocultarBotoes() {
@@ -206,15 +232,6 @@ function ocultarFerramentas() {
     botaoFerramentas.style.display = "none";
   }
 }
-window.addEventListener("load", function () {
-  ocultarFerramentas();
-  if (localStorage.getItem("isLogado") === "true") {
-    atualizarBotaoLogout();
-    ocultarBotoes();
-  } else {
-    exibirBotoesCadastro();
-  }
-});
 
 // Função para atualizar o botão para Logout e exibir os botões de cadastro
 function atualizarBotaoLogout() {
@@ -226,6 +243,7 @@ function atualizarBotaoLogout() {
       localStorage.setItem("isLogado", false);
       botaoLogin.textContent = "Login";
       botaoLogin.removeEventListener("click", logoutUsuario);
+
       exibirBotoesCadastro();
       ocultarFerramentas();
       fecharModalLogin();

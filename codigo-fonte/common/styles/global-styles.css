@@ -68,3 +68,22 @@
   align-items: center;
   justify-content: center;
 }
+.footer {
+  background-color: var(--secondary-bg-color);
+  padding: 20px 0;
+  text-align: center;
+  margin-top: auto;
+  width: 100%;
+}
+
+.footerContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footerTexto {
+  color: var(--white-font-color);
+  font-size: 14px;
+  margin: 0;
+}
