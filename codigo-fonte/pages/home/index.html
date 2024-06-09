@@ -18,21 +18,21 @@
 
 <body class="home-body">
     <nav class="navbar navbar-expand-lg">
-        <a class="navbar-brand" href="home.html"><img class="logo" src="../../assets/img/focoAcademicoIcon.png" /></a>
+        <a class="navbar-brand" href="./index.html"><img class="logo" src="../../assets/img/focoAcademicoIcon.png" /></a>
         <ul class="nav-options">
-            <li class="option btn-home"><a href="home.html">Home</a></li>
-            <li class="option btn-sobre"><a href="sobre.html">Sobre</a></li>
-            <li class="option btn-login">Login</li>
-            <li class="option dropdown"> <a class="dropdown-toggle" href="#" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Ferramentas</a>
-              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item" href="../Anotacoes/anotacoes.html">Anotações</a>
-                <a class="dropdown-item" href="">Relógio Polmodoro</a>
-              </div>
+            <li class="option btn-home"><a href="./index.html">Home</a></li>
+            <li class="option btn-sobre"><a href="../Sobre/sobre.html">Sobre</a></li>
+            <li class="option btn-login" id="btn-login">Login</li>
+            <li class="option dropdown tools-btn"> <a class="dropdown-toggle" href="#" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Ferramentas</a>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="../Anotações/anotacoes.html">Anotações</a>
+                    <a class="dropdown-item" href="index.html">Relógio Polmodoro</a>
+                </div>
             </li>
-          </ul>
-          <button class="default-btn"><i class="fas fa-user" style="margin-right: 0.5rem;"></i> Cadastre-se</button>
-        </nav>
+        </ul>
+        <button class="default-btn cadastro-btn"><i class="fas fa-user" style="margin-right: 0.5rem;"></i> Cadastre-se</button>
+    </nav>
     <h1 class="main-title-home title">
         O seu espaço para estudar
     </h1>
@@ -58,7 +58,7 @@
                 <input type="password" id="cadSenha" name="senha">
             </div>
 
-            <button id="btn-cadastrar">Cadastrar agora</button>
+            <button class=".cadastro-btn" id="btn-cadastrar">Cadastrar agora</button>
         </form>
     </div>
 
