@@ -7,7 +7,7 @@
   <link rel="icon" href="assets/image.png" />
   <link rel="stylesheet" href="./anotacoes.css">
   <link rel="stylesheet" href="../Pomodoro/pomodoro.css">
-  <link rel="stylesheet" href="styles\global-style.css">
+  <link rel="stylesheet" href="../../common/styles/global-styles.css">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../../common/styles/global-styles.css" />
@@ -36,21 +36,19 @@
     </ul>
     <!-- <button class="default-btn cadastro-btn"><i class="fas fa-user" style="margin-right: 0.5rem;"></i> Cadastre-se</button> -->
   </nav>
+
   <section class="anotacoes-container">
     <h2>Minhas Anotações</h2>
     <ul class="lista-anotacoes"></ul>
-
     <div class="criar-nova-anotacao">
       <button class="btn-nova-anotacao" onclick="abrirModalNovaAnotacao()">Nova anotação</button>
     </div>
-
-    <div class="modal" id="modalCriarEditar">
-      <div class="modal-header">
-        <h3>Criar Anotação</h3>
-        <button class="btn-fechar" onclick="fecharModal()">X</button>
-      </div>
-      <div class="modal-body">
-        <form id="formAnotacao">
+      <form class="modal" id="modalCriarEditar" onsubmit="salvarAnotacao()">
+        <div class="modal-header">
+          <h3>Criar Anotação</h3>
+          <button class="btn-fechar" onclick="fecharModal()">X</button>
+        </div>
+        <div class="modal-body">
           <div class="input-wrapper">
             <label for="titulo">Título:</label>
             <input type="text" id="titulo" name="titulo" required>
@@ -59,18 +57,24 @@
             <label for="conteudo">Conteúdo:</label>
             <textarea id="conteudo" name="conteudo" rows="5" required></textarea>
           </div>
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary" onclick="salvarAnotacao()">Salvar</button>
-        <button type="button" class="btn btn-secondary" onclick="fecharModal()">Cancelar</button>
-      </div>
-    </div>
-
-    <script src="./anotacoes.js"></script>
-    <script src="../Pomodoro/pomodoro.js"></script>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" onclick="salvarAnotacao()">Salvar</button>
+          <button type="button" class="btn btn-secondary" onclick="fecharModal()">Cancelar</button>
+        </div>
+      </form>
+    </main>
   </section>
   <div id="pomodoro-container"></div>
+  <footer class="footer">
+    <div class="footerContainer">
+      <p class="footerTexto">PROJETO: DESENVOLVIMENTO - 4577105 - TECNOLOGIA EM ANÁLISE E DESENVOLVIMENTO DE SISTEMAS - EAD - VIRTUAL - PUC - G1_18_30</p>
+    </div>
+  </footer>
+
+  <script src="./anotacoes.js"></script>
+  <script src="../Pomodoro/pomodoro.js"></script>
+
 </body>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
