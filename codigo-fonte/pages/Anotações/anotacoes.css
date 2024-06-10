@@ -85,7 +85,6 @@ nav .logo {
   font-weight: var(--font-weight-bold);
   background-color: var(--primary-color);
   color: var(--white-font-color);
-  margin-left: 2rem;
   border-radius: 40px;
   border: none;
   font-size: 0.9rem;
@@ -117,7 +116,6 @@ nav .logo {
   display: flex;
   flex-direction: column;
   justify-content: center;
-
   margin-bottom: 20px;
   padding: 1.5rem;
   border-radius: 10px;
@@ -131,6 +129,7 @@ nav .logo {
 
 .lista-anotacoes {
   margin-top: 50px;
+  justify-items: center;
   list-style: none;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
