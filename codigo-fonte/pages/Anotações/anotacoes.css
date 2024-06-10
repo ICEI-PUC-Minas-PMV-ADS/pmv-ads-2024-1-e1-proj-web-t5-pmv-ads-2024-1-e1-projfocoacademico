@@ -51,8 +51,8 @@ footer p {
   }
 }
 
-.logo {
-  width: 16vw;
+nav .logo {
+  width: 18rem;
 }
 
 .btn-cadastre-se {
@@ -263,6 +263,16 @@ p {
   }
   to {
     opacity: 0;
+  }
+}
+
+@media (max-width: 900px) {
+  .logo {
+    width: 10rem;
+  }
+  .navbar-brand {
+    width: 100%;
+    text-align: center;
   }
 }
 
