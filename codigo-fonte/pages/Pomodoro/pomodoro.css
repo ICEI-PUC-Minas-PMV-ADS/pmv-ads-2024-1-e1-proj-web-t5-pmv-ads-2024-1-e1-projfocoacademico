@@ -85,3 +85,19 @@
 .minimal.pomodoro {
   padding: 10px;
 }
+
+.minimal.pomodoro:hover {
+  padding: 20px;
+}
+
+.minimal:hover .controls {
+  display: block;
+}
+
+.minimal:hover .timer {
+  margin-bottom: 20px;
+}
+
+.minimal:hover h1 {
+  display: block;
+}

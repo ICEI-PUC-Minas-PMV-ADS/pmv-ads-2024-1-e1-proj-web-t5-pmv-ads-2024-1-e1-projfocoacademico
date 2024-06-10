@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const title = document.createElement('h1');
   title.id = 'pomodoro-title';
-  title.textContent = '🍅 Relógio Pomodoro';
+  title.textContent = '🍅';
   pomodoroDiv.appendChild(title);
 
   const timerDiv = document.createElement('div');
@@ -134,7 +134,16 @@ document.addEventListener('DOMContentLoaded', () => {
     timer = setInterval(updateTimer, 1000);
 
     if (currentMode === 'break') {
-      switchMode();
+      currentMode = 'focus';
+      title.textContent = '🤓 Foco nos estudos!';
+      overlay.style.display = 'none';
+      pauseButton.style.display = 'inline';
+      stopButton.style.display = 'inline';
+      startButton.style.display = 'none';
+      snoozeButton.style.display = 'none';
+      container.classList.remove('centered');
+      pomodoroDiv.addEventListener('click', handleClickPomodoro);
+      window.addEventListener('click', handleOutsideClick);
     }
 
     e.stopPropagation();
@@ -187,7 +196,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function resetTimer() {
     minutesSpan.textContent = focusMinutes.toString().padStart(2, '0');
     secondsSpan.textContent = '00';
-    title.textContent = '🍅 Relógio Pomodoro';
+    title.textContent = '🍅';
   }
 
   function getSetting(key, defaultValue) {
@@ -199,7 +208,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function handleClickPomodoro() {
     clearTimeout(minimalTimeout);
     pomodoroDiv.classList.toggle('minimal');
-    minimalTimeout = setTimeout(() => pomodoroDiv.classList.add('minimal'), 5000);
+    minimalTimeout = setTimeout(() => pomodoroDiv.classList.add('minimal'), 4000);
   }
 
   function handleOutsideClick(e) {
