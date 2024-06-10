@@ -1,4 +1,4 @@
-@import url("../../common/styles/global-styles.css");
+@import url('../../common/styles/global-styles.css');
 
 body {
   font-family: var(--font-family);
@@ -14,6 +14,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  height: 100%;
 }
 
 header {
@@ -60,10 +61,10 @@ header {
   background-color: var(--primary-color);
   cursor: pointer;
   transition: 0.3s;
-    &:hover {
-      transition: 0.3s;
+  &:hover {
+    transition: 0.3s;
     filter: opacity(0.8);
-    }
+  }
 }
 
 .criar-nova-anotacao {
@@ -90,7 +91,7 @@ header {
   }
 }
 
-.btn-fechar { 
+.btn-fechar {
   position: absolute;
   top: 10px;
   right: 10px;
@@ -107,43 +108,39 @@ header {
   margin-bottom: 20px;
   padding: 1.5rem;
   border-radius: 10px;
+  max-width: 70rem;
+  width: 100%;
 }
 
 .lista-anotacoes {
-  list-style: none; 
-  padding: 0;
-  display: flex; 
-  align-items: center;
-  justify-content: center;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
-  gap: 20px; 
-  margin-block: 3rem;
-  width: 70rem;
-  flex-wrap: wrap;
+  margin-top: 50px;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  gap: 20px;
 }
 
 .anotacao {
-  border-radius: 10px; 
+  border-radius: 10px;
   margin-bottom: 10px;
   padding: 15px;
-  background-color: var(--white-font-color); 
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+  background-color: var(--white-font-color);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   width: 20rem;
   height: 20rem;
-  cursor: pointer; 
-  transition: 0.3s; 
+  transition: 0.3s;
 }
 
 h2 {
-  font-size: 1.2rem; 
-  font-weight: var(--font-weight-bold); 
-  color: var(--primary-color); 
+  font-size: 1.2rem;
+  font-weight: var(--font-weight-bold);
+  color: var(--primary-color);
   text-align: center;
 }
 
 p {
-  color: var(--secondary-bg-color); 
-  margin-top: 30px; 
+  color: var(--secondary-bg-color);
+  margin-top: 30px;
 }
 
 .btn-excluir,
@@ -167,14 +164,14 @@ p {
 }
 
 #modalCriarEditar {
-  background-color: var(--secondary-bg-color); 
+  background-color: var(--secondary-bg-color);
   width: 40rem;
   height: 35rem;
-  color: var(--white-font-color); 
+  color: var(--white-font-color);
   position: fixed;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%); 
+  transform: translate(-50%, -50%);
   padding: 2rem 4rem;
   border: 1px solid #888;
   border-radius: 40px;
@@ -206,8 +203,8 @@ p {
 }
 
 .input-wrapper input {
-  font-family: var(--font-family); 
-  font-weight: var(--font-weight-thin); 
+  font-family: var(--font-family);
+  font-weight: var(--font-weight-thin);
   font-size: 1rem;
   padding: 4px 10px;
   border: none;
@@ -216,10 +213,10 @@ p {
 }
 
 .input-wrapper input:focus {
-  outline: 1px solid var(--primary-color); 
+  outline: 1px solid var(--primary-color);
 }
 
-.modal-container.active { 
+.modal-container.active {
   display: block;
   background-color: rgba(0, 0, 0, 0.5);
 }
@@ -228,18 +225,17 @@ p {
   position: fixed;
   top: 20px;
   right: 20px;
-  z-index: 100; 
+  z-index: 100;
 }
 
 .mensagem-sucesso {
-  background-color: #4CAF50; 
+  background-color: #4caf50;
   color: white;
   padding: 10px 20px;
   border-radius: 5px;
   max-width: 300px;
   animation: fadeOut 3s ease; /*opcional*/
 }
-
 
 @keyframes fadeOut {
   from {

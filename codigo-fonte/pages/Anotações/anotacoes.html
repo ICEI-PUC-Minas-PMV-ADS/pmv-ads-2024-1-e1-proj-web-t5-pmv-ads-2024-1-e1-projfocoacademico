@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="assets/image.png" />
   <link rel="stylesheet" href="./anotacoes.css">
+  <link rel="stylesheet" href="../Pomodoro/pomodoro.css">
   <link rel="stylesheet" href="styles\global-style.css">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;400;700&display=swap" rel="stylesheet">
@@ -37,37 +38,39 @@
   </nav>
   <section class="anotacoes-container">
     <h2>Minhas Anotações</h2>
-    <div class="lista-anotacoes"></div>
-    <main>
-      <section class="criar-nova-anotacao">
-        <button class="btn-nova-anotacao" onclick="abrirModalNovaAnotacao()">Nova anotação</button>
-      </section>
+    <ul class="lista-anotacoes"></ul>
 
-      <div class="modal" id="modalCriarEditar">
-        <div class="modal-header">
-          <h3>Criar Anotação</h3>
-          <button class="btn-fechar" onclick="fecharModal()">X</button>
-        </div>
-        <div class="modal-body">
-          <form id="formAnotacao">
-            <div class="input-wrapper">
-              <label for="titulo">Título:</label>
-              <input type="text" id="titulo" name="titulo" required>
-            </div>
-            <div class="input-wrapper">
-              <label for="conteudo">Conteúdo:</label>
-              <textarea id="conteudo" name="conteudo" rows="5" required></textarea>
-            </div>
-          </form>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-primary" onclick="salvarAnotacao()">Salvar</button>
-          <button type="button" class="btn btn-secondary" onclick="fecharModal()">Cancelar</button>
-        </div>
+    <div class="criar-nova-anotacao">
+      <button class="btn-nova-anotacao" onclick="abrirModalNovaAnotacao()">Nova anotação</button>
+    </div>
+
+    <div class="modal" id="modalCriarEditar">
+      <div class="modal-header">
+        <h3>Criar Anotação</h3>
+        <button class="btn-fechar" onclick="fecharModal()">X</button>
       </div>
-    </main>
+      <div class="modal-body">
+        <form id="formAnotacao">
+          <div class="input-wrapper">
+            <label for="titulo">Título:</label>
+            <input type="text" id="titulo" name="titulo" required>
+          </div>
+          <div class="input-wrapper">
+            <label for="conteudo">Conteúdo:</label>
+            <textarea id="conteudo" name="conteudo" rows="5" required></textarea>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" onclick="salvarAnotacao()">Salvar</button>
+        <button type="button" class="btn btn-secondary" onclick="fecharModal()">Cancelar</button>
+      </div>
+    </div>
 
     <script src="./anotacoes.js"></script>
+    <script src="../Pomodoro/pomodoro.js"></script>
+  </section>
+  <div id="pomodoro-container"></div>
 </body>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
