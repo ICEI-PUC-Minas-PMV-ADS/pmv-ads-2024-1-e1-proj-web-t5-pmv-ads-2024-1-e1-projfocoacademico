@@ -39,30 +39,34 @@
 
   <section class="anotacoes-container">
     <h2>Minhas Anotações</h2>
+    <div id="campoBusca">
+      <input type="text" placeholder="Buscar anotação">
+      <button id="buscaAnotacaoBtn">Buscar</button>
+    </div>
     <ul class="lista-anotacoes"></ul>
     <div class="criar-nova-anotacao">
       <button class="btn-nova-anotacao" onclick="abrirModalNovaAnotacao()">Nova anotação</button>
     </div>
-      <form class="modal" id="modalCriarEditar" onsubmit="salvarAnotacao()">
-        <div class="modal-header">
-          <h3>Criar Anotação</h3>
-          <button type="button" class="btn-fechar" onclick="fecharModal()">X</button>
+    <form class="modal" id="modalCriarEditar" onsubmit="salvarAnotacao()">
+      <div class="modal-header">
+        <h3>Criar Anotação</h3>
+        <button type="button" class="btn-fechar" onclick="fecharModal()">X</button>
+      </div>
+      <div class="modal-body">
+        <div class="input-wrapper">
+          <label for="titulo">Título:</label>
+          <input type="text" id="titulo" name="titulo" required>
         </div>
-        <div class="modal-body">
-          <div class="input-wrapper">
-            <label for="titulo">Título:</label>
-            <input type="text" id="titulo" name="titulo" required>
-          </div>
-          <div class="input-wrapper">
-            <label for="conteudo">Conteúdo:</label>
-            <textarea id="conteudo" name="conteudo" rows="5" required></textarea>
-          </div>
+        <div class="input-wrapper">
+          <label for="conteudo">Conteúdo:</label>
+          <textarea id="conteudo" name="conteudo" rows="5" required></textarea>
         </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-primary" onclick="salvarAnotacao()">Salvar</button>
-          <button type="button" class="btn btn-secondary" onclick="fecharModal()">Cancelar</button>
-        </div>
-      </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" onclick="salvarAnotacao()">Salvar</button>
+        <button type="button" class="btn btn-secondary" onclick="fecharModal()">Cancelar</button>
+      </div>
+    </form>
     </main>
   </section>
   <div id="pomodoro-container"></div>
