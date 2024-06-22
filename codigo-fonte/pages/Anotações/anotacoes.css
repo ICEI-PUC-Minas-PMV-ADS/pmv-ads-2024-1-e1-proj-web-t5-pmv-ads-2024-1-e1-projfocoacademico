@@ -1,4 +1,4 @@
-@import url('../../common/styles/global-styles.css');
+@import url("../../common/styles/global-styles.css");
 
 body {
   font-family: var(--font-family);
@@ -73,6 +73,49 @@ nav .logo {
     transition: 0.3s;
     filter: opacity(0.8);
   }
+}
+
+#campoBusca {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+}
+
+#campoBusca input,
+#buscaAnotacaoBtn {
+  font-family: var(--font-family);
+
+  padding-block: 1rem;
+  border: none;
+}
+
+#campoBusca input {
+  flex-grow: 1;
+
+  padding-inline: 1rem;
+  border-radius: 4px 0 0 4px;
+}
+
+#campoBusca input:focus {
+  outline: 1px solid var(--primary-color);
+}
+
+#buscaAnotacaoBtn {
+  background-color: var(--primary-color);
+
+  padding-inline: 1rem;
+  border-radius: 0 4px 4px 0;
+
+  cursor: pointer;
+  transition: 0.6s;
+}
+#buscaAnotacaoBtn:hover {
+  opacity: 0.7;
+}
+
+#buscaAnotacaoBtn:active {
+  outline: none;
 }
 
 .criar-nova-anotacao {
