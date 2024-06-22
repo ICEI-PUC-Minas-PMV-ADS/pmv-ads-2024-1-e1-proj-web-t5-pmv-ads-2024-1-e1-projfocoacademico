@@ -114,6 +114,10 @@ nav .logo {
   opacity: 0.7;
 }
 
+#buscaAnotacaoBtn:active {
+  outline: none;
+}
+
 .criar-nova-anotacao {
   text-align: center;
   position: relative;
