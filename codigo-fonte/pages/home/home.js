@@ -30,8 +30,6 @@ const loginEmail = document.querySelector("#loginEmail");
 const loginSenha = document.querySelector("#loginSenha");
 const submitLoginBtn = document.querySelector("#btn-submit-login");
 
-
-
 /* Events Homepage */
 homepageLink.addEventListener("click", function goToHomepage() {
   window.location.href = "./index.html";
@@ -100,12 +98,13 @@ cadastrarBtn.addEventListener("click", function (e) {
 function cadastrarUsuario() {
   if (cadastroValido()) {
     let listaUsuarios = JSON.parse(
-      localStorage.getItem("listaUsuarios") || "[]"
+      localStorage.getItem("listaUsuarios") || "[]",
     );
     listaUsuarios.push({
       nome: cadNome.value,
       email: cadEmail.value,
       senha: cadSenha.value,
+      anotacoes: [],
     });
 
     localStorage.setItem("listaUsuarios", JSON.stringify(listaUsuarios));
@@ -154,9 +153,13 @@ window.addEventListener("click", function (event) {
     fecharModalLogin();
   }
 });
+
 submitLoginBtn.addEventListener("click", function submitLoginUsuario(e) {
   e.preventDefault();
   if (isLoginValido(loginEmail.value, loginSenha.value)) {
+    const usuarioLogado = getUsuario(loginEmail.value, loginSenha.value);
+    localStorage.setItem("anotacoes", JSON.stringify(usuarioLogado.anotacoes));
+    localStorage.setItem("usuarioLogado", JSON.stringify(usuarioLogado.email));
     localStorage.setItem("isLogado", true);
     alert("Logado com sucesso!");
     fecharModalLogin();
@@ -187,9 +190,15 @@ function getListaUsuarios() {
   return JSON.parse(usuariosJSON);
 }
 
+function getUsuario(email, senha) {
+  return getListaUsuarios().find(
+    (usuario) => usuario.email === email && usuario.senha === senha,
+  );
+}
+
 function isLoginValido(userEmail, userPassword) {
   return getListaUsuarios().some(
-    (usuario) => usuario.email === userEmail && usuario.senha === userPassword
+    (usuario) => usuario.email === userEmail && usuario.senha === userPassword,
   );
 }
 
