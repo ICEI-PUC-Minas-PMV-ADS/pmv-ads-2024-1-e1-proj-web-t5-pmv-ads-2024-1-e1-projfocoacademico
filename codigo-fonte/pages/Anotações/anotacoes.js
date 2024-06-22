@@ -1,6 +1,20 @@
 // armazenamento local
 function salvarAnotacoes(anotacoes) {
+  const usuarioLogado = JSON.parse(localStorage.getItem("usuarioLogado"));
+  const indexUsuario = getListaUsuarios().findIndex(
+    (usuario) => usuario.email == usuarioLogado,
+  );
+  const listaUsuarios = getListaUsuarios();
+  console.log(indexUsuario, usuarioLogado);
+  listaUsuarios[indexUsuario].anotacoes = anotacoes;
+
+  localStorage.setItem("listaUsuarios", JSON.stringify(listaUsuarios));
   localStorage.setItem("anotacoes", JSON.stringify(anotacoes));
+}
+
+function getListaUsuarios() {
+  const usuariosJSON = localStorage.getItem("listaUsuarios") || "[]";
+  return JSON.parse(usuariosJSON);
 }
 
 // gerenciar o modal
@@ -80,7 +94,7 @@ function criarElementoAnotacao(anotacao, index) {
   const btnExcluir = document.createElement("button");
   btnExcluir.classList.add("btn-excluir");
   btnExcluir.innerHTML = '<i class="fa fa-trash"></i>';
-  btnExcluir.onclick = () => excluirAnotacao(anotacao);
+  btnExcluir.onclick = () => excluirAnotacao(index);
   li.appendChild(btnExcluir);
 
   const btnEditar = document.createElement("button");
@@ -96,7 +110,9 @@ function criarElementoAnotacao(anotacao, index) {
 function excluirAnotacao(indice) {
   if (confirm("Tem certeza que deseja excluir esta anotação?")) {
     let anotacoes = recuperarAnotacoes();
+    console.log(indice);
     anotacoes.splice(indice, 1);
+    console.log(anotacoes);
     salvarAnotacoes(anotacoes);
     carregarAnotacoes();
     console.log("Anotação excluída com sucesso!");
