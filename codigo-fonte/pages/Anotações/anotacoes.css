@@ -76,7 +76,7 @@ nav .logo {
 }
 
 #campoBusca {
-  width: 100%;
+  max-width: 100%;
 
   display: flex;
   align-items: center;
@@ -162,8 +162,7 @@ nav .logo {
   margin-bottom: 20px;
   padding: 1.5rem;
   border-radius: 10px;
-  max-width: 70rem;
-  width: 100%;
+  width: 80%;
 }
 
 .anotacoes-container h2 {
@@ -343,6 +342,17 @@ p {
     line-height: 10px;
     margin-left: 5px;
   }
+
+  #campoBusca {
+    margin-inline: auto;
+    max-width: 100%;
+    justify-content: center;
+  }
+  #campoBusca input {
+    max-width: 70%;
+
+    font-size: 14px;
+  }
 }
 
 @media (max-width: 460px) {
@@ -351,5 +361,18 @@ p {
     height: 28rem;
     padding: 1rem 2rem;
     gap: 8px;
+  }
+
+  .anotacoes-container,
+  .lista-anotacoes {
+    width: 100%;
+    padding: 0;
+  }
+
+  .anotacao {
+    padding: 10px;
+    width: 16rem;
+    height: 20rem;
+    transition: 0.3s;
   }
 }

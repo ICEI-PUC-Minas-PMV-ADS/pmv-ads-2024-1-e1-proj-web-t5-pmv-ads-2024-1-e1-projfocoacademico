@@ -2,6 +2,7 @@
   background-color: #fff;
   padding: 20px;
   border-radius: 10px;
+  border: 1px solid var(--primary-color);
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   text-align: center;
   transition: all 0.3s ease;
@@ -100,4 +101,17 @@
 
 .minimal:hover h1 {
   display: block;
+}
+
+@media (max-width: 800px) {
+  .pomodoro {
+    padding: 10px;
+  }
+  .timer {
+    font-size: 28px;
+    margin-bottom: 10px;
+  }
+  #pomodoro-title {
+    font-size: 28px;
+  }
 }

@@ -8,6 +8,7 @@
   flex-direction: column;
   align-items: center;
 }
+
 .main-container {
   max-width: 1200px;
   display: grid;
@@ -240,11 +241,11 @@
   transition: 0.4s;
   cursor: pointer;
 }
- /*responsividade main*/
+/*responsividade main*/
 @media (max-width: 900px) {
   .main-container {
     align-items: flex-start;
-    text-align: left;
+    text-align: center;
     margin: 0 20px;
     padding: 0px;
   }
@@ -257,7 +258,7 @@
   .subtitle-home {
     font-size: 1.2rem;
     margin-top: 1.5rem;
-    text-align: left;
+    text-align: center;
   }
 
   .home-btn {
@@ -271,7 +272,7 @@
 @media (max-width: 480px) {
   .main-container {
     align-items: flex-start;
-    text-align: left;
+    text-align: center;
     padding: 0 20px;
   }
 
