@@ -110,6 +110,7 @@ nav .logo {
   cursor: pointer;
   transition: 0.6s;
 }
+
 #buscaAnotacaoBtn:hover {
   opacity: 0.7;
 }
@@ -348,6 +349,7 @@ p {
     max-width: 100%;
     justify-content: center;
   }
+
   #campoBusca input {
     max-width: 70%;
 

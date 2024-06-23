@@ -131,6 +131,7 @@
   transition: 0.4s;
   cursor: pointer;
 }
+
 #btn-cadastrar:hover,
 .btn-close-cadastro:hover {
   opacity: 0.6;
@@ -173,6 +174,7 @@
   background-color: rgb(0, 0, 0);
   background-color: rgba(0, 0, 0, 0.4);
 }
+
 #modal-login {
   background-color: var(--secondary-bg-color);
   width: 500px;
@@ -187,6 +189,7 @@
   flex-direction: column;
   gap: 24px;
 }
+
 #modal-login legend {
   text-align: center;
   font-weight: bold;
@@ -194,6 +197,7 @@
 
   margin-bottom: 16px;
 }
+
 #btn-submit-login {
   background-color: var(--primary-color);
   color: var(--white-font-color);
@@ -208,12 +212,14 @@
   transition: 0.4s;
   cursor: pointer;
 }
+
 .bx-low-vision {
   cursor: pointer;
   position: absolute;
   right: 3%;
   top: 30px;
 }
+
 #btn-entrar:hover,
 .btn-close-login:hover {
   opacity: 0.6;
@@ -241,6 +247,7 @@
   transition: 0.4s;
   cursor: pointer;
 }
+
 /*responsividade main*/
 @media (max-width: 900px) {
   .main-container {
