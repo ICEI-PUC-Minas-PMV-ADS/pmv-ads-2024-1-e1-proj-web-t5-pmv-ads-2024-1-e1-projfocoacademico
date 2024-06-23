@@ -1,43 +1,43 @@
-document.addEventListener('DOMContentLoaded', () => {
-  const container = document.getElementById('pomodoro-container');
+document.addEventListener("DOMContentLoaded", () => {
+  const container = document.getElementById("pomodoro-container");
 
-  const pomodoroDiv = document.createElement('div');
-  pomodoroDiv.className = 'pomodoro';
+  const pomodoroDiv = document.createElement("div");
+  pomodoroDiv.className = "pomodoro";
 
-  pomodoroDiv.addEventListener('click', handleClickPomodoro);
+  pomodoroDiv.addEventListener("click", handleClickPomodoro);
 
-  window.addEventListener('click', handleOutsideClick);
+  window.addEventListener("click", handleOutsideClick);
 
-  const title = document.createElement('h1');
-  title.id = 'pomodoro-title';
-  title.textContent = '🍅';
+  const title = document.createElement("h1");
+  title.id = "pomodoro-title";
+  title.textContent = "🍅";
   pomodoroDiv.appendChild(title);
 
-  const timerDiv = document.createElement('div');
-  timerDiv.className = 'timer';
-  const minutesSpan = document.createElement('span');
-  minutesSpan.id = 'minutes';
-  const colonSpan = document.createElement('span');
-  colonSpan.textContent = ':';
-  const secondsSpan = document.createElement('span');
-  secondsSpan.id = 'seconds';
-  secondsSpan.textContent = '00';
+  const timerDiv = document.createElement("div");
+  timerDiv.className = "timer";
+  const minutesSpan = document.createElement("span");
+  minutesSpan.id = "minutes";
+  const colonSpan = document.createElement("span");
+  colonSpan.textContent = ":";
+  const secondsSpan = document.createElement("span");
+  secondsSpan.id = "seconds";
+  secondsSpan.textContent = "00";
   timerDiv.appendChild(minutesSpan);
   timerDiv.appendChild(colonSpan);
   timerDiv.appendChild(secondsSpan);
   pomodoroDiv.appendChild(timerDiv);
 
-  const controlsDiv = document.createElement('div');
-  controlsDiv.className = 'controls';
+  const controlsDiv = document.createElement("div");
+  controlsDiv.className = "controls";
 
-  const startButton = createButton('start', 'fa-play');
-  const pauseButton = createButton('pause', 'fa-pause');
-  const stopButton = createButton('stop', 'fa-stop');
-  const snoozeButton = createButton('snooze', 'fa-moon');
+  const startButton = createButton("start", "fa-play");
+  const pauseButton = createButton("pause", "fa-pause");
+  const stopButton = createButton("stop", "fa-stop");
+  const snoozeButton = createButton("snooze", "fa-moon");
 
-  pauseButton.style.display = 'none';
-  stopButton.style.display = 'none';
-  snoozeButton.style.display = 'none';
+  pauseButton.style.display = "none";
+  stopButton.style.display = "none";
+  snoozeButton.style.display = "none";
 
   controlsDiv.appendChild(startButton);
   controlsDiv.appendChild(pauseButton);
@@ -47,40 +47,42 @@ document.addEventListener('DOMContentLoaded', () => {
 
   container.appendChild(pomodoroDiv);
 
-  const overlay = document.createElement('div');
-  overlay.className = 'overlay';
-  overlay.style.display = 'none';
+  const overlay = document.createElement("div");
+  overlay.className = "overlay";
+  overlay.style.display = "none";
   document.body.appendChild(overlay);
 
   let timer;
   let isPaused = false;
-  let currentMode = 'focus';
+  let currentMode = "focus";
   let remainingTime;
   let endTime;
 
-  const focusMinutes = getSetting('focusTime', 25);
-  const breakMinutes = getSetting('breakTime', 5);
+  const focusMinutes = getSetting("focusTime", 25);
+  const breakMinutes = getSetting("breakTime", 5);
 
-  minutesSpan.textContent = focusMinutes.toString().padStart(2, '0');
+  minutesSpan.textContent = focusMinutes.toString().padStart(2, "0");
 
-  startButton.addEventListener('click', startTimer);
-  pauseButton.addEventListener('click', pauseTimer);
-  stopButton.addEventListener('click', stopTimer);
-  snoozeButton.addEventListener('click', snoozeTimer);
+  startButton.addEventListener("click", startTimer);
+  pauseButton.addEventListener("click", pauseTimer);
+  stopButton.addEventListener("click", stopTimer);
+  snoozeButton.addEventListener("click", snoozeTimer);
 
   function createButton(id, iconClass) {
-    const button = document.createElement('button');
+    const button = document.createElement("button");
     button.id = id;
-    const icon = document.createElement('i');
+    const icon = document.createElement("i");
     icon.className = `fas ${iconClass}`;
     button.appendChild(icon);
     return button;
   }
 
   function startTimer(e) {
-    title.textContent = currentMode === 'focus' ? '🤓 Foco nos estudos!' : '🏖️ Faça uma pausa';
+    title.textContent =
+      currentMode === "focus" ? "🤓 Foco nos estudos!" : "🏖️ Faça uma pausa";
     if (!isPaused) {
-      remainingTime = (currentMode === 'focus' ? focusMinutes : breakMinutes) * 60 * 1000;
+      remainingTime =
+        (currentMode === "focus" ? focusMinutes : breakMinutes) * 60 * 1000;
     } else {
       isPaused = false;
     }
@@ -90,15 +92,15 @@ document.addEventListener('DOMContentLoaded', () => {
     clearInterval(timer);
     timer = setInterval(updateTimer, 300);
 
-    if (currentMode === 'focus') {
-      pauseButton.style.display = 'inline';
-      stopButton.style.display = 'inline';
-      startButton.style.display = 'none';
-      snoozeButton.style.display = 'none';
+    if (currentMode === "focus") {
+      pauseButton.style.display = "inline";
+      stopButton.style.display = "inline";
+      startButton.style.display = "none";
+      snoozeButton.style.display = "none";
     }
 
-    if (currentMode === 'focus') {
-      setTimeout(() => pomodoroDiv.classList.add('minimal'), 3000);
+    if (currentMode === "focus") {
+      setTimeout(() => pomodoroDiv.classList.add("minimal"), 3000);
     }
 
     e.stopPropagation();
@@ -108,8 +110,8 @@ document.addEventListener('DOMContentLoaded', () => {
     isPaused = true;
     remainingTime = endTime - new Date().getTime();
     clearInterval(timer);
-    startButton.style.display = 'inline';
-    pauseButton.style.display = 'none';
+    startButton.style.display = "inline";
+    pauseButton.style.display = "none";
 
     e.stopPropagation();
   }
@@ -117,11 +119,11 @@ document.addEventListener('DOMContentLoaded', () => {
   function stopTimer(e) {
     clearInterval(timer);
     isPaused = false;
-    currentMode = 'focus';
+    currentMode = "focus";
     resetTimer();
-    startButton.style.display = 'inline';
-    pauseButton.style.display = 'none';
-    stopButton.style.display = 'none';
+    startButton.style.display = "inline";
+    pauseButton.style.display = "none";
+    stopButton.style.display = "none";
 
     e.stopPropagation();
   }
@@ -133,17 +135,17 @@ document.addEventListener('DOMContentLoaded', () => {
     endTime = new Date().getTime() + remainingTime;
     timer = setInterval(updateTimer, 1000);
 
-    if (currentMode === 'break') {
-      currentMode = 'focus';
-      title.textContent = '🤓 Foco nos estudos!';
-      overlay.style.display = 'none';
-      pauseButton.style.display = 'inline';
-      stopButton.style.display = 'inline';
-      startButton.style.display = 'none';
-      snoozeButton.style.display = 'none';
-      container.classList.remove('centered');
-      pomodoroDiv.addEventListener('click', handleClickPomodoro);
-      window.addEventListener('click', handleOutsideClick);
+    if (currentMode === "break") {
+      currentMode = "focus";
+      title.textContent = "🤓 Foco nos estudos!";
+      overlay.style.display = "none";
+      pauseButton.style.display = "inline";
+      stopButton.style.display = "inline";
+      startButton.style.display = "none";
+      snoozeButton.style.display = "none";
+      container.classList.remove("centered");
+      pomodoroDiv.addEventListener("click", handleClickPomodoro);
+      window.addEventListener("click", handleOutsideClick);
     }
 
     e.stopPropagation();
@@ -165,38 +167,38 @@ document.addEventListener('DOMContentLoaded', () => {
     const minutes = Math.floor(time / 1000 / 60);
     const seconds = Math.floor((time / 1000) % 60);
 
-    minutesSpan.textContent = minutes.toString().padStart(2, '0');
-    secondsSpan.textContent = seconds.toString().padStart(2, '0');
+    minutesSpan.textContent = minutes.toString().padStart(2, "0");
+    secondsSpan.textContent = seconds.toString().padStart(2, "0");
   }
 
   function switchMode() {
-    if (currentMode === 'focus') {
-      currentMode = 'break';
-      title.textContent = '🏖️ Faça uma pausa';
-      overlay.style.display = 'flex';
-      snoozeButton.style.display = 'inline';
-      startButton.style.display = 'none';
-      pauseButton.style.display = 'none';
-      stopButton.style.display = 'none';
-      container.classList.add('centered');
-      pomodoroDiv.classList.remove('minimal');
-      pomodoroDiv.removeEventListener('click', handleClickPomodoro);
-      window.removeEventListener('click', handleOutsideClick);
+    if (currentMode === "focus") {
+      currentMode = "break";
+      title.textContent = "🏖️ Faça uma pausa";
+      overlay.style.display = "flex";
+      snoozeButton.style.display = "inline";
+      startButton.style.display = "none";
+      pauseButton.style.display = "none";
+      stopButton.style.display = "none";
+      container.classList.add("centered");
+      pomodoroDiv.classList.remove("minimal");
+      pomodoroDiv.removeEventListener("click", handleClickPomodoro);
+      window.removeEventListener("click", handleOutsideClick);
     } else {
-      currentMode = 'focus';
-      title.textContent = '🤓 Foco nos estudos!';
-      overlay.style.display = 'none';
-      container.classList.remove('centered');
-      pomodoroDiv.addEventListener('click', handleClickPomodoro);
-      window.addEventListener('click', handleOutsideClick);
+      currentMode = "focus";
+      title.textContent = "🤓 Foco nos estudos!";
+      overlay.style.display = "none";
+      container.classList.remove("centered");
+      pomodoroDiv.addEventListener("click", handleClickPomodoro);
+      window.addEventListener("click", handleOutsideClick);
     }
     startTimer();
   }
 
   function resetTimer() {
-    minutesSpan.textContent = focusMinutes.toString().padStart(2, '0');
-    secondsSpan.textContent = '00';
-    title.textContent = '🍅';
+    minutesSpan.textContent = focusMinutes.toString().padStart(2, "0");
+    secondsSpan.textContent = "00";
+    title.textContent = "🍅";
   }
 
   function getSetting(key, defaultValue) {
@@ -207,13 +209,16 @@ document.addEventListener('DOMContentLoaded', () => {
   let minimalTimeout;
   function handleClickPomodoro() {
     clearTimeout(minimalTimeout);
-    pomodoroDiv.classList.toggle('minimal');
-    minimalTimeout = setTimeout(() => pomodoroDiv.classList.add('minimal'), 4000);
+    pomodoroDiv.classList.toggle("minimal");
+    minimalTimeout = setTimeout(
+      () => pomodoroDiv.classList.add("minimal"),
+      4000,
+    );
   }
 
   function handleOutsideClick(e) {
     if (!pomodoroDiv.contains(e.target)) {
-      pomodoroDiv.classList.add('minimal');
+      pomodoroDiv.classList.add("minimal");
     }
   }
 });

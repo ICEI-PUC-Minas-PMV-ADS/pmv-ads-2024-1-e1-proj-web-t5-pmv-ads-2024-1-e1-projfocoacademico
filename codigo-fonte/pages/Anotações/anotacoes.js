@@ -5,7 +5,6 @@ function salvarAnotacoes(anotacoes) {
     (usuario) => usuario.email == usuarioLogado,
   );
   const listaUsuarios = getListaUsuarios();
-  console.log(indexUsuario, usuarioLogado);
   listaUsuarios[indexUsuario].anotacoes = anotacoes;
 
   localStorage.setItem("listaUsuarios", JSON.stringify(listaUsuarios));
@@ -62,7 +61,6 @@ function carregarAnotacoes() {
   const anotacoes = recuperarAnotacoes();
   if (anotacoes.length > 0) {
     preencherListaAnotacoes(anotacoes);
-    console.log("Anotações carregadas com sucesso!");
   } else {
     preencherListaAnotacoes(anotacoes);
   }
@@ -110,12 +108,9 @@ function criarElementoAnotacao(anotacao, index) {
 function excluirAnotacao(indice) {
   if (confirm("Tem certeza que deseja excluir esta anotação?")) {
     let anotacoes = recuperarAnotacoes();
-    console.log(indice);
     anotacoes.splice(indice, 1);
-    console.log(anotacoes);
     salvarAnotacoes(anotacoes);
     carregarAnotacoes();
-    console.log("Anotação excluída com sucesso!");
   }
 }
 
@@ -180,7 +175,6 @@ function salvarAnotacao() {
 
   salvarAnotacoes(anotacoes);
   fecharModal();
-  console.log("Anotação salva com sucesso!");
 }
 
 // Inicialização da página
