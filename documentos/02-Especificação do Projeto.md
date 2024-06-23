@@ -145,16 +145,16 @@ Baseados nas histórias de usuários anteriores temos os seguintes requisitos pa
 
 ### Requisitos Funcionais
 
-| ID    | Descrição                                                                                                                                                                          | Prioridade |
-| ----- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------- |
-| RF-01 | A aplicação deve permitir ao usuário cadastrar uma conta.                               | ALTA       |
-| RF-02 | A aplicação deve permitir ao usuário fazer o login da sua conta.                       | ALTA       |
-| RF-03 | A aplicação deve permitir ao usuário criar novas anotações.                            | MÉDIA      |
-| RF-04 | A aplicação deve permitir ao usuário editar anotações existentes.                      | MÉDIA      |
-| RF-05 | A aplicação deve permitir ao usuário excluir anotações existentes.                     | MÉDIA      |
-| RF-06 | A aplicação deve permitir ao usuário utilizar a técnica Pomodoro.                      | MÉDIA      |
-| RF-07 | A aplicação deve apresentar informação sobre o objetivo principal da plataforma.       | BAIXA      |
-
+| ID    | Descrição                                                                        | Prioridade |
+| ----- | -------------------------------------------------------------------------------- | ---------- |
+| RF-01 | A aplicação deve permitir ao usuário cadastrar uma conta.                        | ALTA       |
+| RF-02 | A aplicação deve permitir ao usuário fazer o login da sua conta.                 | ALTA       |
+| RF-03 | A aplicação deve permitir ao usuário criar novas anotações.                      | MÉDIA      |
+| RF-04 | A aplicação deve permitir ao usuário editar anotações existentes.                | MÉDIA      |
+| RF-05 | A aplicação deve permitir ao usuário excluir anotações existentes.               | MÉDIA      |
+| RF-06 | A aplicação deve permitir ao usuário utilizar a técnica Pomodoro.                | MÉDIA      |
+| RF-07 | A aplicação deve permitir a busca de anotações por título ou conteúdo.           | MÉDIA      |
+| RF-08 | A aplicação deve apresentar informação sobre o objetivo principal da plataforma. | BAIXA      |
 
 \*\*Prioridade: Alta / Média / Baixa.
 

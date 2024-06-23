@@ -1,0 +1,30 @@
+message: Please cite this software using these metadata.
+title: Foco Acadêmico
+authors:
+  - family-names: Rachelle Luz Diegues de Arecippo
+    given-names: Beatrice
+  - family-names: Damián Martínez Bautista
+    given-names: Jair
+  - family-names: Alves Rodrigues
+    given-names: Felipe
+  - family-names: Augusto Costa Barros
+    given-names: Guilherme
+  - family-names: de Moura Pova
+    given-names: Rodrigo
+  - family-names: Mascarenhas Ferreira
+    given-names: Maurício
+  - name-suffix: Professor
+    affiliation: PUC Minas
+    family-names: Rodrigo Costa
+    given-names: Marco
+  - name-suffix: Professor
+    affiliation: PUC Minas
+    family-names:
+    given-names:
+keywords:
+  - Anotações
+  - Foco
+  - Estudar
+repository-code: https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e1-proj-web-t5-pmv-ads-2024-1-e1-projfocoacademico
+version: 1.0.0
+date-released: 2023-10-31
