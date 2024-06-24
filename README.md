@@ -37,7 +37,7 @@ Este projeto está sendo desenvolvido com o objetivo de fornecer aos estudantes 
 
 # Hospedagem
 
-* Insira o endereço eletrônico público de acesso ao conteúdo publicado. 
+Aplicação com hospedagem usando Github Pages neste [link](https://icei-puc-minas-pmv-ads.github.io/pmv-ads-2024-1-e1-proj-web-t5-pmv-ads-2024-1-e1-projfocoacademico/codigo-fonte/pages/home/index.html).
 
 # Código-Fonte
 
