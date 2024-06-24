@@ -9,7 +9,7 @@ Os testes funcionais realizados na aplicação web são descritos a seguir.
 
   Responsável: Jair Damián.
 
-  ![telaInicial] (Registro de Teste\telaInicial.png)
+  ![documentos\img\Registros de Testes\telaInicial.png](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e1-proj-web-t5-pmv-ads-2024-1-e1-projfocoacademico/blob/2d32ac92bd20ca4a926abb4fec110d4ff9ac53fb/documentos/img/Registros%20de%20Testes/telaInicial.png)
 
   </li>
   <hr>
@@ -20,7 +20,7 @@ Os testes funcionais realizados na aplicação web são descritos a seguir.
 
   <p>Verificar se o usuário foi cadastrado.</p
     
-  ![telaCadastro](Registro de Teste\telaCadastro.png)
+  ![Registro de Teste\telaCadastro.png](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e1-proj-web-t5-pmv-ads-2024-1-e1-projfocoacademico/blob/2d32ac92bd20ca4a926abb4fec110d4ff9ac53fb/documentos/img/Registros%20de%20Testes/telaCadastro.png)
 
   </li>
   <hr>
@@ -31,7 +31,7 @@ Os testes funcionais realizados na aplicação web são descritos a seguir.
 
  <p>Usuário preenche os campos "Senha" e "Confirmaçāo de Senha" com valores diferentes.</p>
       
-  ![telaLogin](Registro de Teste\telaLogin.png)
+  ![Registro de Teste\telaLogin.png](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e1-proj-web-t5-pmv-ads-2024-1-e1-projfocoacademico/blob/2d32ac92bd20ca4a926abb4fec110d4ff9ac53fb/documentos/img/Registros%20de%20Testes/telaLogin.png)
 
   </li>
   <hr>
@@ -40,11 +40,11 @@ Os testes funcionais realizados na aplicação web são descritos a seguir.
    
   Responsável: Beatrice. 
    
-  ![criarAnotação](Registro de Teste\criarAnotação.png)
+  ![Registro de Teste\criarAnotação.png](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e1-proj-web-t5-pmv-ads-2024-1-e1-projfocoacademico/blob/2d32ac92bd20ca4a926abb4fec110d4ff9ac53fb/documentos/img/Registros%20de%20Testes/criarAnota%C3%A7%C3%A3o.png)
 
   <p>A anotação deve ser salva com sucesso e exibida na lista de anotações.</p>
     
-  ![criarAnotação2](Registro de Teste\criarAnotação2.png)
+  ![Registro de Teste\criarAnotação2.png](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e1-proj-web-t5-pmv-ads-2024-1-e1-projfocoacademico/blob/2d32ac92bd20ca4a926abb4fec110d4ff9ac53fb/documentos/img/Registros%20de%20Testes/criarAnota%C3%A7%C3%A3o2.png)
   
     
   </li>
@@ -56,7 +56,7 @@ Os testes funcionais realizados na aplicação web são descritos a seguir.
 
   <p>A anotação deve ser atualizada com sucesso e as alterações devem ser exibidas corretamente. </p>
   
-  ![editarAnotação] (Registro de Teste\editarAnotação.png)
+  ![Registro de Teste\editarAnotação.png](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e1-proj-web-t5-pmv-ads-2024-1-e1-projfocoacademico/blob/2d32ac92bd20ca4a926abb4fec110d4ff9ac53fb/documentos/img/Registros%20de%20Testes/editarAnota%C3%A7%C3%A3o.png)
 
   </li>
   <hr>
@@ -67,7 +67,7 @@ Os testes funcionais realizados na aplicação web são descritos a seguir.
     
   <p> Mensagem de confirmação de exclusão do anotação.</p>
   
-  ![ecluirAnotação] (Registro de Teste\excluirAnotação.png)
+  ![Registro de Teste\excluirAnotação.png](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e1-proj-web-t5-pmv-ads-2024-1-e1-projfocoacademico/blob/2d32ac92bd20ca4a926abb4fec110d4ff9ac53fb/documentos/img/Registros%20de%20Testes/excluirAnota%C3%A7%C3%A3o.png)
 
   </li>
   <hr>
@@ -78,11 +78,11 @@ Os testes funcionais realizados na aplicação web são descritos a seguir.
     
   <p> O relógio já é programado no canto da tela. </p>
   
-  ![telaPomodoro] (Registro de Teste\telaPomodoro.png)
+  ![Registro de Teste\telaPomodoro.png] https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e1-proj-web-t5-pmv-ads-2024-1-e1-projfocoacademico/blob/2d32ac92bd20ca4a926abb4fec110d4ff9ac53fb/documentos/img/Registros%20de%20Testes/telaPomodoro.png
 
   <p> O timer deve iniciar, pausar, retomar e parar corretamente, de acordo com as ações do usuário.</p>
   
-  ![telaPomodoro2] (Registro de Teste\telaPomodoro2.png)
+  ![Registro de Teste\telaPomodoro2.png](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e1-proj-web-t5-pmv-ads-2024-1-e1-projfocoacademico/blob/2d32ac92bd20ca4a926abb4fec110d4ff9ac53fb/documentos/img/Registros%20de%20Testes/telaPomodoro2.png)
 
   </li>
   <hr>
@@ -93,7 +93,7 @@ Os testes funcionais realizados na aplicação web são descritos a seguir.
 
   <p> A página Sobre deve conter informações relevantes sobre o projeto e seus desenvolvedores.</p>
     
-  ![telaSobre] (Registro de Teste\telaSobre.png)
+  ![Registro de Teste\telaSobre.png](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e1-proj-web-t5-pmv-ads-2024-1-e1-projfocoacademico/blob/2d32ac92bd20ca4a926abb4fec110d4ff9ac53fb/documentos/img/Registros%20de%20Testes/telaSobre.png)
 
   </li>
   <hr>
