@@ -80,6 +80,7 @@ Os testes funcionais realizados na aplicação web são descritos a seguir.
   
   ![Registro de Teste\telaPomodoro.png](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e1-proj-web-t5-pmv-ads-2024-1-e1-projfocoacademico/blob/2d32ac92bd20ca4a926abb4fec110d4ff9ac53fb/documentos/img/Registros%20de%20Testes/telaPomodoro.png)
 
+
   <p> O timer deve iniciar, pausar, retomar e parar corretamente, de acordo com as ações do usuário.</p>
   
   ![Registro de Teste\telaPomodoro2.png](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e1-proj-web-t5-pmv-ads-2024-1-e1-projfocoacademico/blob/2d32ac92bd20ca4a926abb4fec110d4ff9ac53fb/documentos/img/Registros%20de%20Testes/telaPomodoro2.png)
