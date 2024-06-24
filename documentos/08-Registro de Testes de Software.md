@@ -102,4 +102,4 @@ Os testes funcionais realizados na aplicação web são descritos a seguir.
 
 ## Avaliação
 
-Os testes de software mostraram que os requisitos priorizados foram atendidos, funcionando como planejado. Para as próximas iterações, serão acrescentadas melhorias no layout e responsividade da aplicação.
+Os testes de software mostraram que os requisitos foram atendidos, funcionando como planejado. Para as próximas iterações, serão acrescentadas melhorias no layout e responsividade da aplicação.
