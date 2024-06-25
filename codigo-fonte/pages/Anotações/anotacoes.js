@@ -212,7 +212,6 @@ function buscaAnotacoes() {
       preencherListaAnotacoes(anotacoes);
     }
   } else {
-    window.alert('Digite um termo para procurar sua anotação...');
     preencherListaAnotacoes(anotacoes);
   }
 }
